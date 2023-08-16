@@ -26,6 +26,6 @@ Demo: www.ctfsamplesites.com
 
 ## Status
 
-PUT_NETLIFY_STATUS_CODE_HERE
+[![Netlify Status](https://api.netlify.com/api/v1/badges/d1a05213-ed39-4445-b89f-3f7c4ca8d703/deploy-status)](https://app.netlify.com/sites/inquisitive-khapse-802fcf/deploys)
 
 ===
