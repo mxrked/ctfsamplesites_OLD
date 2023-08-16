@@ -9,7 +9,7 @@ import { useRouter } from "next/router";
 // Component Imports
 
 // Style Imports
-import "../assets/styles/modules/Sites/Plumbing/Plumbing.module.css";
+import "../../assets/styles/modules/Sites/Plumbing/Plumbing.module.css";
 
 export default function PlumbingAbout() {
   const router = useRouter();

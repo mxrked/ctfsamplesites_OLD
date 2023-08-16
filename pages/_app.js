@@ -1,5 +1,5 @@
 // React/Next Imports
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 
 // Library Imports
@@ -240,3 +240,5 @@ function MyApp({ Component, pageProps }) {
 
   return <Component {...pageProps} />;
 }
+
+export default MyApp;

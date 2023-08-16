@@ -9,7 +9,7 @@ import { useRouter } from "next/router";
 // Component Imports
 
 // Style Imports
-import "../assets/styles/modules/Sites/LawnCare/LawnCare.module.css";
+import "../../assets/styles/modules/Sites/LawnCare/LawnCare.module.css";
 
 export default function LawnCareAbout() {
   const router = useRouter();
