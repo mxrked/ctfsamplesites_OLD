@@ -1,1 +1,1 @@
-{"version":3,"sources":[],"names":[],"mappings":"","file":"Painting.module.css"}
+{"version":3,"sources":["Painting.module.scss","Painting.module.css"],"names":[],"mappings":"AAMA;EACE,2BAAA;EACA,8CAAA;EACA,kBAAA;ACLF;ADOA;EACE,8BAAA;EACA,iDAAA;EACA,kBAAA;ACLF;ADOA;EACE,sBAAA;EACA,sDAAA;EACA,kBAAA;ACLF;ADOA;EACE,0BAAA;EACA,0DAAA;EACA,kBAAA;ACLF","file":"Painting.module.css"}
