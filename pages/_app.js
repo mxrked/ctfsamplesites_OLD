@@ -102,7 +102,6 @@ function MyApp({ Component, pageProps }) {
     if (sessionStorage.getItem("EA Fix")) {
       const SS_VARIABLES = [
         "Mobile Nav Opened",
-        "Donation Popup Opened",
         "HREF",
         "FM Loaded",
         "Page Reload",
@@ -221,8 +220,40 @@ function MyApp({ Component, pageProps }) {
       const ELEMENTS = document.getElementsByTagName(eT);
 
       for (let i = 0; i < ELEMENTS.length; i++) {
-        if (!ELEMENTS[i].classList.contains("selected")) {
-          ELEMENTS[i].classList.add("selected");
+        if (router.asPath.includes("art-gallery")) {
+          if (!ELEMENTS[i].classList.contains("art-gallery-selected")) {
+            ELEMENTS[i].classList.add("art-gallery-selected");
+          }
+        }
+
+        if (router.asPath.includes("painting")) {
+          if (!ELEMENTS[i].classList.contains("painting-selected")) {
+            ELEMENTS[i].classList.add("painting-selected");
+          }
+        }
+
+        if (router.asPath.includes("home-improvement")) {
+          if (!ELEMENTS[i].classList.contains("home-improvement-selected")) {
+            ELEMENTS[i].classList.add("home-improvement-selected");
+          }
+        }
+
+        if (router.asPath.includes("lawn-care")) {
+          if (!ELEMENTS[i].classList.contains("lawn-care-selected")) {
+            ELEMENTS[i].classList.add("lawn-care-selected");
+          }
+        }
+
+        if (router.asPath.includes("photography")) {
+          if (!ELEMENTS[i].classList.contains("photography-selected")) {
+            ELEMENTS[i].classList.add("photography-selected");
+          }
+        }
+
+        if (router.asPath.includes("pressure-washing")) {
+          if (!ELEMENTS[i].classList.contains("pressure-washing-selected")) {
+            ELEMENTS[i].classList.add("pressure-washing-selected");
+          }
         }
       }
     });
