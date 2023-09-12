@@ -1,0 +1,56 @@
+.full-second {
+  transition: 1s ease-in-out !important;
+}
+
+.half-second {
+  transition: 0.5s ease-in-out !important;
+}
+
+.stay-put {
+  // transform: translateX(0) !important;
+  transition: 0s ease-in-out !important;
+  opacity: 1 !important;
+}
+
+.art-gallery-selected {
+  &::selection {
+  }
+
+  &::-moz-selection {
+  }
+}
+.painting-selected {
+  &::selection {
+  }
+
+  &::-moz-selection {
+  }
+}
+.home-improvement-selected {
+  &::selection {
+  }
+
+  &::-moz-selection {
+  }
+}
+.pressure-washing-selected {
+  &::selection {
+  }
+
+  &::-moz-selection {
+  }
+}
+.photography-selected {
+  &::selection {
+  }
+
+  &::-moz-selection {
+  }
+}
+.lawn-care-selected {
+  &::selection {
+  }
+
+  &::-moz-selection {
+  }
+}
