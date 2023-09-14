@@ -6,7 +6,9 @@
 
 import { MongoClient } from "mongodb";
 
-export async function connectToDatabase(uri) {
+const URI = "";
+
+export async function connectToDatabase() {
   let cachedClient = null;
   let cachedDb = null;
 
@@ -16,7 +18,7 @@ export async function connectToDatabase(uri) {
 
   if (!cachedClient) {
     // Creating the connection
-    cachedClient = new MongoClient(uri, {
+    cachedClient = new MongoClient(URI, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
