@@ -1,4 +1,5 @@
 import axios from "axios";
+import { connectToDatabase } from "@/utils/connections/connection";
 
 // const IPSTACK_KEY = "6eafccee3db72681fcd3589b807c0f2e";
 
