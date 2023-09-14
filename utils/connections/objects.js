@@ -6,7 +6,9 @@
 
 import { connectToDatabase } from "./connection";
 
-const MAIN_CONNECTION = connectToDatabase(process.env.MAIN_DB_URI);
+const MAIN_CONNECTION = connectToDatabase(
+  "mongodb+srv://admin:main_DB_020700@ctfsamplesites-main.q1qz4xs.mongodb.net/?retryWrites=true&w=majority"
+);
 const ART_GALLERY_CONNECTION = connectToDatabase(
   process.env.ART_GALLERY_DB_URI
 );
