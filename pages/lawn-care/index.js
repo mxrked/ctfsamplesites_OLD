@@ -5,6 +5,7 @@ import { useRouter } from "next/router";
 // Library Imports
 
 // Data/Functions/Images Imports
+import DeclareStorageVariable from "@/assets/functions/data/storage/DeclareStorageVariable";
 
 // Component Imports
 
