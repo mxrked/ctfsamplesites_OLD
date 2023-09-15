@@ -12,6 +12,18 @@
   opacity: 1 !important;
 }
 
+.main-selected {
+  &::selection {
+    background-color: #1092a7;
+    color: black;
+  }
+
+  &::-moz-selection {
+    background-color: #1092a7;
+    color: black;
+  }
+}
+
 .art-gallery-selected {
   &::selection {
   }
