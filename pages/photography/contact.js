@@ -14,5 +14,15 @@ import "../../assets/styles/modules/Sites/Photography/Photography.module.css";
 export default function PhotographyContact() {
   const router = useRouter();
 
+  // Displaying website visits
+  useEffect(() => {
+    if (sessionStorage.getItem("Photography Visits")) {
+      console.log(
+        "Total Visits on Photography Website: " +
+          sessionStorage.getItem("Photography Visits")
+      );
+    }
+  }, []);
+
   return "";
 }

@@ -14,5 +14,15 @@ import "../../assets/styles/modules/Sites/HomeImprovement/HomeImprovement.module
 export default function HomeImprovementServices() {
   const router = useRouter();
 
+  // Displaying website visits
+  useEffect(() => {
+    if (sessionStorage.getItem("Home Improvement Visits")) {
+      console.log(
+        "Total Visits on Home Improvement Website: " +
+          sessionStorage.getItem("Home Improvement Visits")
+      );
+    }
+  }, []);
+
   return "";
 }

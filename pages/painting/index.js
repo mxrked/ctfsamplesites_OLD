@@ -40,10 +40,15 @@ export default function PaintingIndex() {
       });
   }, []);
 
+  // Storing data to sessionStorage
+  useEffect(() => {
+    DeclareStorageVariable("session", "Painting Visits", TOTAL_UNIQUE_IPS);
+  }, [TOTAL_UNIQUE_IPS]);
+
   // Writing data to console
   useEffect(() => {
     if (TOTAL_UNIQUE_IPS !== null) {
-      console.log("Total Visits on Main Page: " + TOTAL_UNIQUE_IPS);
+      console.log("Total Visits on Painting Website: " + TOTAL_UNIQUE_IPS);
     }
 
     if (MAIN_USER_IP_ADDRESS !== null) {

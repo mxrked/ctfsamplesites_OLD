@@ -14,5 +14,15 @@ import "../../assets/styles/modules/Sites/LawnCare/LawnCare.module.css";
 export default function LawnCareAbout() {
   const router = useRouter();
 
+  // Displaying website visits
+  useEffect(() => {
+    if (sessionStorage.getItem("Lawn Care Visits")) {
+      console.log(
+        "Total Visits on Lawn Care Website: " +
+          sessionStorage.getItem("Lawn Care Visits")
+      );
+    }
+  }, []);
+
   return "";
 }

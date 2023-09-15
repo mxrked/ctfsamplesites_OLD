@@ -14,5 +14,15 @@ import "../../assets/styles/modules/Sites/Painting/Painting.module.css";
 export default function PaintingContact() {
   const router = useRouter();
 
+  // Displaying website visits
+  useEffect(() => {
+    if (sessionStorage.getItem("Painting Visits")) {
+      console.log(
+        "Total Visits on Painting Website: " +
+          sessionStorage.getItem("Painting Visits")
+      );
+    }
+  }, []);
+
   return "";
 }

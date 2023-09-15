@@ -14,5 +14,15 @@ import "../../assets/styles/modules/Sites/ArtGallery/ArtGallery.module.css";
 export default function ArtGalleryAbout() {
   const router = useRouter();
 
+  // Displaying website visits
+  useEffect(() => {
+    if (sessionStorage.getItem("Art Gallery Visits")) {
+      console.log(
+        "Total Visits on Art Gallery Website: " +
+          sessionStorage.getItem("Art Gallery Visits")
+      );
+    }
+  }, []);
+
   return "";
 }
