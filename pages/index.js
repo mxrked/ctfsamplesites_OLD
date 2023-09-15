@@ -17,6 +17,7 @@ import { FADE_IN } from "@/assets/animations/FADES";
 // Style Imports
 import styles from "../assets/styles/modules/Index/Index.module.css";
 import "../assets/styles/modules/Index/Index.module.css";
+import { TriggerExitAnimations } from "@/assets/functions/dom/triggers/TriggerExitAnimations";
 
 export default function Home() {
   const router = useRouter();
@@ -118,35 +119,34 @@ export default function Home() {
   //   }, 1600);
   // }, []);
 
+  // Triggering exit animations
+  useEffect(() => {
+    TriggerExitAnimations();
+  }, []);
+
   return (
     <div
       id="PAGE"
       className={`${styles.index_page} index-page page full-second`}
     >
       <main id="PAGE_CNT">
-        <div className={`${styles.index_page_inner}`}>
-          <motion.div
-            ref={REF}
-            initial="hidden"
-            animate={CONTROLS}
-            variants={FADE_IN}
-            className={`${styles.index_page_inner_top} fm-motion fade-in fade-in-fix full-second`}
-          >
+        <motion.div
+          ref={REF}
+          initial="hidden"
+          animate={CONTROLS}
+          variants={FADE_IN}
+          className={`${styles.index_page_inner} fm-motion fade-in fade-in-fix full-second`}
+        >
+          <div className={`${styles.index_page_inner_top}`}>
             <h1 className="main-selected orientation-change-element half-second">
               codingthefront
             </h1>
             <span className="main-selected orientation-change-element half-second">
               SAMPLE WEBSITES
             </span>
-          </motion.div>
+          </div>
 
-          <motion.div
-            ref={REF}
-            initial="hidden"
-            animate={CONTROLS}
-            variants={FADE_IN}
-            className={`${styles.index_page_inner_text} fm-motion fade-in fade-in-fix full-second`}
-          >
+          <div className={`${styles.index_page_inner_text}`}>
             <span
               className={`${styles.bullet} ${styles.bullet_1} orientation-change-element half-second`}
             />
@@ -188,15 +188,9 @@ export default function Home() {
                 </p>
               </div>
             </div>
-          </motion.div>
+          </div>
 
-          <motion.div
-            ref={REF}
-            initial="hidden"
-            animate={CONTROLS}
-            variants={FADE_IN}
-            className={`${styles.index_page_inner_projects} fm-motion fade-in fade-in-fix full-second`}
-          >
+          <div className={`${styles.index_page_inner_projects}`}>
             <div className={`${styles.index_page_inner_projects_inner}`}>
               <div
                 className={`${styles.index_page_inner_projects_inner_box} container-fluid`}
@@ -387,8 +381,8 @@ export default function Home() {
                 </div>
               </div>
             </div>
-          </motion.div>
-        </div>
+          </div>
+        </motion.div>
       </main>
     </div>
   );
