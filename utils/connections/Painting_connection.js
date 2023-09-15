@@ -6,8 +6,10 @@
 
 import { MongoClient } from "mongodb";
 
-const URI =
-  "mongodb+srv://admin:painting_DB_020700@ctfsamplesites-painting.vzcnbvr.mongodb.net/?retryWrites=true&w=majority";
+//! MAKE THIS LOCAL ENV VARIABLE
+// const URI =
+//   "mongodb+srv://admin:painting_DB_020700@ctfsamplesites-painting.vzcnbvr.mongodb.net/?retryWrites=true&w=majority";
+
 export async function connectToDatabase() {
   let cachedClient = null;
   let cachedDb = null;
