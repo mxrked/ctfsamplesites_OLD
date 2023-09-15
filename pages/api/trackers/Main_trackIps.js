@@ -76,6 +76,10 @@ export default async (req, res) => {
       { IP_ADDRESS: null },
       { added_at: TARGET_ADDED_AT }
     );
+    await IP_COLLECTION.deleteMany(
+      { IP_ADDRESS: "::1" },
+      { added_at: TARGET_ADDED_AT }
+    );
 
     // Removing 3.238.66.225 ip (I have no idea what this is. I assume it might be Netlify)
 
