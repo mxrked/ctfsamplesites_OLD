@@ -3,8 +3,14 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 
 // Library Imports
+import { useAnimation, motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 // Data/Functions/Images Imports
+import TriggerInViewMotion from "@/assets/functions/dom/triggers/TriggerInViewMotion";
+import DeclareStorageVariable from "@/assets/functions/data/storage/DeclareStorageVariable";
+
+import { FADE_IN } from "@/assets/animations/FADES";
 
 // Component Imports
 
@@ -15,10 +21,32 @@ import "../assets/styles/modules/Index/Index.module.css";
 export default function Home() {
   const router = useRouter();
 
+  const CONTROLS = useAnimation();
+  const [REF, INVIEW] = useInView();
+
   const [MAIN_USER_IP_ADDRESS, SET_MAIN_USER_IP_ADDRESS] = useState(null);
   const [TOTAL_UNIQUE_IPS, SET_TOTAL_UNIQUE_IPS] = useState(null);
 
-  // Fetching the total number of visits via unique IP addresses
+  const [PROJECTS, SET_PROJECTS] = useState([]);
+
+  const PLACEHOLDER_URLS = [
+    "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/ctfsamplesites_CDN/main/imgs/placeholders/blue.webp",
+    "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/ctfsamplesites_CDN/main/imgs/placeholders/green.webp",
+    "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/ctfsamplesites_CDN/main/imgs/placeholders/purple.webp",
+    "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/ctfsamplesites_CDN/main/imgs/placeholders/red.webp",
+  ];
+
+  const COLUMN_CLASSES = ["col-lg-6", "col-md-6", "col-sm-6", "col-xs-12"];
+  const SINGLE_COLUMN = ["col-lg-12", "col-md-12", "col-sm-12", "col-xs-12"];
+  const DOUBLE_COLUMN = ["col-lg-6", "col-md-6", "col-sm-6", "col-xs-6"];
+  const TRIPLE_COLUMN = ["col-lg-4", "col-md-4", "col-sm-4", "col-xs-4"];
+  const QUAD_COLUMN = ["col-lg-3", "col-md-3", "col-sm-6", "col-xs-6"];
+
+  useEffect(() => {
+    TriggerInViewMotion(CONTROLS, INVIEW);
+  }, [CONTROLS, INVIEW]);
+
+  // Fetching/setting the total number of visits via unique IP addresses
   useEffect(() => {
     fetch("/api/trackers/Main_trackIps")
       .then((response) => response.json())
@@ -30,7 +58,7 @@ export default function Home() {
       });
   }, []);
 
-  // Fetching current user's ip address
+  // Fetching/setting current user's ip address
   useEffect(() => {
     fetch("https://api64.ipify.org?format=json")
       .then((response) => response.json())
@@ -41,6 +69,30 @@ export default function Home() {
         console.error("Error fetching IP address: " + error);
       });
   }, []);
+
+  // Fetching/setting projects data
+  useEffect(() => {
+    fetch("json/Sample-Site-Data.json")
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Network response not ok.");
+        }
+        return response.json();
+      })
+      .then((data) => SET_PROJECTS(data))
+      .catch((error) =>
+        console.error("Error fetching projects data: " + error)
+      );
+  }, []);
+
+  // Storing data to sessionStorage
+  useEffect(() => {
+    DeclareStorageVariable(
+      "session",
+      "Pressure Washing Visits",
+      TOTAL_UNIQUE_IPS
+    );
+  }, [TOTAL_UNIQUE_IPS]);
 
   // Writing data to console
   useEffect(() => {
@@ -53,9 +105,291 @@ export default function Home() {
     }
   }, [TOTAL_UNIQUE_IPS]);
 
+  // // Removing margin-bottom to last 2 projects
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     const PROJECTS = document.querySelectorAll(".project");
+
+  //     const LAST_PROJECT = parseInt(PROJECTS.length) - 1;
+  //     const PENULTIMATE_PROJECT = parseInt(PROJECTS.length) - 2;
+
+  //     PROJECTS[PENULTIMATE_PROJECT].style.marginBottom = 0;
+  //     PROJECTS[LAST_PROJECT].style.marginBottom = 0;
+  //   }, 1600);
+  // }, []);
+
   return (
-    <div id="PAGE" className={`${styles.index_page} page full-second`}>
-      <main id="PAGE_CNT"></main>
+    <div
+      id="PAGE"
+      className={`${styles.index_page} index-page page full-second`}
+    >
+      <main id="PAGE_CNT">
+        <div className={`${styles.index_page_inner}`}>
+          <motion.div
+            ref={REF}
+            initial="hidden"
+            animate={CONTROLS}
+            variants={FADE_IN}
+            className={`${styles.index_page_inner_top} fm-motion fade-in fade-in-fix full-second`}
+          >
+            <h1 className="main-selected orientation-change-element half-second">
+              codingthefront
+            </h1>
+            <span className="main-selected orientation-change-element half-second">
+              SAMPLE WEBSITES
+            </span>
+          </motion.div>
+
+          <motion.div
+            ref={REF}
+            initial="hidden"
+            animate={CONTROLS}
+            variants={FADE_IN}
+            className={`${styles.index_page_inner_text} fm-motion fade-in fade-in-fix full-second`}
+          >
+            <span
+              className={`${styles.bullet} ${styles.bullet_1} orientation-change-element half-second`}
+            />
+            <span
+              className={`${styles.bullet} ${styles.bullet_2} orientation-change-element half-second`}
+            />
+            <span
+              className={`${styles.bullet} ${styles.bullet_3} orientation-change-element half-second`}
+            />
+            <span
+              className={`${styles.bullet} ${styles.bullet_4} orientation-change-element half-second`}
+            />
+
+            <div className={`${styles.index_page_inner_text_inner}`}>
+              <div className={`${styles.index_page_inner_text_inner_cnt}`}>
+                <p className="main-selected orientation-change-element half-second">
+                  Hello! My name is Parker Phelps. I am a Freelance Web
+                  Developer based out in North Carolina.
+                </p>
+                <p className="main-selected orientation-change-element half-second">
+                  This website hosts all of my sample websites that my clients
+                  can have a look at to possibly consider working with me.
+                </p>
+                <p className="main-selected orientation-change-element half-second">
+                  If you would like to book a project/website, you can by
+                  filling out the contact form on the{" "}
+                  <a
+                    className="main-selected"
+                    href="https://codingthefront.com/contact"
+                  >
+                    contact page
+                  </a>
+                  . You can also view the pricing plans for my projects on that
+                  page as well.
+                </p>
+                <p className="main-selected orientation-change-element half-second">
+                  There are ZERO limits to what I can create with my web
+                  development knowledge. :)
+                </p>
+              </div>
+            </div>
+          </motion.div>
+
+          <motion.div
+            ref={REF}
+            initial="hidden"
+            animate={CONTROLS}
+            variants={FADE_IN}
+            className={`${styles.index_page_inner_projects} fm-motion fade-in fade-in-fix full-second`}
+          >
+            <div className={`${styles.index_page_inner_projects_inner}`}>
+              <div
+                className={`${styles.index_page_inner_projects_inner_box} container-fluid`}
+              >
+                <div
+                  className={`${styles.index_page_inner_projects_inner_row} row`}
+                >
+                  {PROJECTS.map((project) => (
+                    <div
+                      id={project._siteID}
+                      key={project._siteID}
+                      className={`${styles.project} project col-lg-6 col-md-6 col-sm-6 col-xs-12`}
+                    >
+                      <div className={`${styles.project_inner}`}>
+                        <div className={`${styles.project_inner_cnt_top}`}>
+                          <div
+                            className={`${styles.project_inner_cnt_top_cnt}`}
+                          >
+                            <span
+                              className={`${styles.project_heading} orientation-change-element half-second`}
+                            >
+                              {project._siteName}
+                            </span>
+
+                            <div
+                              className={`${styles.project_main_img_holder} orientation-change-element half-second`}
+                            >
+                              <div
+                                id={`projectMainImg${project._siteID}`}
+                                className={`${styles.project_main_img}`}
+                                style={{
+                                  backgroundImage: `url(${project._siteImgs[0]})`,
+                                }}
+                              />
+                            </div>
+
+                            <div className={`${styles.project_imgs_holder}`}>
+                              <div
+                                className={`${styles.project_imgs_holder_box} container-fluid`}
+                              >
+                                <div
+                                  className={`${styles.project_imgs_holder_row} row`}
+                                >
+                                  {project._siteImgs.map((img, index) => (
+                                    <div
+                                      id={`sites${project._siteID}_img_holder${index}`}
+                                      key={`site${project._siteID}_img_${index}`}
+                                      className={`${styles.img} project-img-holder col-lg-3 col-md-3 col-sm-6 col-xs-12`}
+                                      onLoad={(e) => {
+                                        // if (
+                                        //   e.currentTarget
+                                        //     .querySelector(".project-img")
+                                        //     .getAttribute("data-src") ===
+                                        //   PLACEHOLDER_URLS[0]
+                                        // ) {
+                                        //   e.currentTarget.style.display =
+                                        //     "none";
+                                        // }
+                                        // if (
+                                        //   e.currentTarget
+                                        //     .querySelector(".project-img")
+                                        //     .getAttribute("data-src") ===
+                                        //   PLACEHOLDER_URLS[1]
+                                        // ) {
+                                        //   e.currentTarget.style.display =
+                                        //     "none";
+                                        // }
+                                        // if (
+                                        //   e.currentTarget
+                                        //     .querySelector(".project-img")
+                                        //     .getAttribute("data-src") ===
+                                        //   PLACEHOLDER_URLS[2]
+                                        // ) {
+                                        //   e.currentTarget.style.display =
+                                        //     "none";
+                                        // }
+                                        // if (
+                                        //   e.currentTarget
+                                        //     .querySelector(".project-img")
+                                        //     .getAttribute("data-src") ===
+                                        //   PLACEHOLDER_URLS[3]
+                                        // ) {
+                                        //   e.currentTarget.style.display =
+                                        //     "none";
+                                        // }
+                                        // const DISPLAYED_IMG_HOLDERS_LENGTH =
+                                        //   document.querySelectorAll(
+                                        //     ".project-img-holder[style='display: none;']"
+                                        //   ).length;
+                                      }}
+                                    >
+                                      <img
+                                        id={`site${project._siteID}_img_${index}`}
+                                        data-src={img}
+                                        alt={img}
+                                        className={`lazyload project-img`}
+                                      />
+
+                                      <button
+                                        className="half-second"
+                                        onClick={(e) => {
+                                          const MAIN_IMG =
+                                            document.getElementById(
+                                              `projectMainImg${project._siteID}`
+                                            );
+                                          const SELECTED_IMG_ID = `site${project._siteID}_img_${index}`;
+
+                                          console.log(SELECTED_IMG_ID);
+
+                                          const SELECTED_IMG_SRC = document
+                                            .getElementById(SELECTED_IMG_ID)
+                                            .getAttribute("data-src");
+
+                                          console.log(SELECTED_IMG_SRC);
+
+                                          MAIN_IMG.style.backgroundImage = `url(${SELECTED_IMG_SRC})`;
+                                        }}
+                                      ></button>
+                                    </div>
+                                  ))}
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div className={`${styles.project_inner_cnt_bottom}`}>
+                          <div
+                            className={`${styles.project_inner_cnt_bottom_cnt}`}
+                          >
+                            <a
+                              href={project._siteDemoLink}
+                              className="half-second orientation-change-element"
+                            >
+                              View Site
+                            </a>
+
+                            <button
+                              onClick={() => {
+                                console.log(
+                                  `Opening site_${project._siteID}_modal`
+                                );
+                              }}
+                              className="orientation-change-element half-second"
+                            >
+                              <span>Learn More</span>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/**
+                      <span>{project._siteID}</span>
+                      <br />
+                      <span>{project._siteName}</span>
+                      <br />
+                      <div
+                        className={`${styles.project_main_img}`}
+                        style={{
+                          background: `url(${project._siteImgs[0]})`,
+                          height: "300px",
+                          width: "200px",
+                        }}
+                      />
+                      <br />
+                      <p>{project._siteDesc}</p>
+                      <br />
+                      {project._siteImgs.map((img) => (
+                        <img
+                          data-src={img}
+                          className="lazyload"
+                          alt={`Image of ${project._siteName}`}
+                        />
+                      ))}
+                      <br />
+                      <a href={project._siteDemoLink}>Link</a>
+                      <br />
+                      <button
+                        onClick={() => {
+                          alert(project._siteID + " : " + project._siteName);
+                        }}
+                      >
+                        Learn More
+                      </button>
+                     */}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </main>
     </div>
   );
 }
