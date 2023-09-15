@@ -8,7 +8,7 @@ import DeclareStorageVariable from "../../data/storage/DeclareStorageVariable";
 import RemoveStorageVariable from "../../data/storage/RemoveStorageVariable";
 import CloseMobileNav from "../closers/CloseMobileNav";
 
-function TriggerExitAnimations() {
+function TriggerExitAnimations(nav) {
   document.querySelectorAll("a").forEach((link) => {
     //! Regular Links
     if (!link.classList.contains("nav-link")) {
@@ -82,7 +82,9 @@ function TriggerExitAnimations() {
         DeclareStorageVariable("session", "HREF", link.href);
 
         // Closing the mobile nav and search
-        CloseMobileNav();
+        if (nav) {
+          // CloseMobileNav(nav);
+        }
 
         // Disabling pointer events and scrolling
         setTimeout(() => {
