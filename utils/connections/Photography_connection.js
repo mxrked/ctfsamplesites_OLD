@@ -7,8 +7,8 @@
 import { MongoClient } from "mongodb";
 
 //! MAKE THIS LOCAL ENV VARIABLE
-// const URI =
-//   "mongodb+srv://admin:photography_DB_020700@ctfsamplesites-photogra.zunr48y.mongodb.net/?retryWrites=true&w=majority";
+const URI =
+  "mongodb+srv://admin:photography_DB_020700@ctfsamplesites-photogra.zunr48y.mongodb.net/?retryWrites=true&w=majority";
 
 export async function connectToDatabase() {
   let cachedClient = null;

@@ -10,10 +10,10 @@ import { MongoClient } from "mongodb";
 const URI =
   "mongodb+srv://admin:main_DB_020700@ctfsamplesites-main.q1qz4xs.mongodb.net/?retryWrites=true&w=majority";
 
-export async function connectToDatabase() {
-  let cachedClient = null;
-  let cachedDb = null;
+let cachedClient = null;
+let cachedDb = null;
 
+export async function connectToDatabase() {
   if (cachedDb) {
     return cachedDb;
   }
