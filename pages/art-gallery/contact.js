@@ -18,7 +18,7 @@ export default function ArtGalleryContact() {
   useEffect(() => {
     if (sessionStorage.getItem("Art Gallery Visits")) {
       console.log(
-        "Total Visits on Pressure Washing Website: " +
+        "Total Visits on Art Gallery Website: " +
           sessionStorage.getItem("Art Gallery Visits")
       );
     }
