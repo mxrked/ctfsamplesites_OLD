@@ -54,7 +54,6 @@ export default function Home({ data }) {
   const [TOTAL_UNIQUE_IPS, SET_TOTAL_UNIQUE_IPS] = useState(null);
 
   const [PROJECTS, SET_PROJECTS] = useState([]);
-  const [PAGE_HEAD_DATA, SET_PAGE_HEAD_DATA] = useState({});
 
   const PLACEHOLDER_URLS = [
     "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/ctfsamplesites_CDN/main/imgs/placeholders/blue.webp",
