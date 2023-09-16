@@ -9,17 +9,36 @@ import { useInView } from "react-intersection-observer";
 // Data/Functions/Images Imports
 import TriggerInViewMotion from "@/assets/functions/dom/triggers/TriggerInViewMotion";
 import DeclareStorageVariable from "@/assets/functions/data/storage/DeclareStorageVariable";
+import { TriggerExitAnimations } from "@/assets/functions/dom/triggers/TriggerExitAnimations";
 
 import { FADE_IN } from "@/assets/animations/FADES";
 
 // Component Imports
+import { PageHead } from "@/assets/components/global/PageHead";
 
 // Style Imports
 import styles from "../assets/styles/modules/Index/Index.module.css";
 import "../assets/styles/modules/Index/Index.module.css";
-import { TriggerExitAnimations } from "@/assets/functions/dom/triggers/TriggerExitAnimations";
 
-export default function Home() {
+export async function getStaticProps() {
+  // Fetch the JSON data from the public directory or an API
+  const protocol = process.env.NODE_ENV === "production" ? "https" : "http";
+  const host =
+    process.env.NODE_ENV === "production"
+      ? "ctfsamplesites.com"
+      : "localhost:3000";
+  const url = `${protocol}://${host}/json/page-head-data/Main.json`;
+  const response = await fetch(url); // Correct path
+  const data = await response.json();
+
+  return {
+    props: {
+      data,
+    },
+  };
+}
+
+export default function Home({ data }) {
   const router = useRouter();
 
   const CONTROLS = useAnimation();
@@ -29,6 +48,7 @@ export default function Home() {
   const [TOTAL_UNIQUE_IPS, SET_TOTAL_UNIQUE_IPS] = useState(null);
 
   const [PROJECTS, SET_PROJECTS] = useState([]);
+  const [PAGE_HEAD_DATA, SET_PAGE_HEAD_DATA] = useState({});
 
   const PLACEHOLDER_URLS = [
     "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/ctfsamplesites_CDN/main/imgs/placeholders/blue.webp",
@@ -43,6 +63,7 @@ export default function Home() {
   const TRIPLE_COLUMN = ["col-lg-4", "col-md-4", "col-sm-4", "col-xs-4"];
   const QUAD_COLUMN = ["col-lg-3", "col-md-3", "col-sm-6", "col-xs-6"];
 
+  // Triggering scroll animations
   useEffect(() => {
     TriggerInViewMotion(CONTROLS, INVIEW);
   }, [CONTROLS, INVIEW]);
@@ -106,19 +127,6 @@ export default function Home() {
     }
   }, [TOTAL_UNIQUE_IPS]);
 
-  // // Removing margin-bottom to last 2 projects
-  // useEffect(() => {
-  //   setTimeout(() => {
-  //     const PROJECTS = document.querySelectorAll(".project");
-
-  //     const LAST_PROJECT = parseInt(PROJECTS.length) - 1;
-  //     const PENULTIMATE_PROJECT = parseInt(PROJECTS.length) - 2;
-
-  //     PROJECTS[PENULTIMATE_PROJECT].style.marginBottom = 0;
-  //     PROJECTS[LAST_PROJECT].style.marginBottom = 0;
-  //   }, 1600);
-  // }, []);
-
   // Triggering exit animations
   useEffect(() => {
     TriggerExitAnimations();
@@ -129,6 +137,8 @@ export default function Home() {
       id="PAGE"
       className={`${styles.index_page} index-page page full-second`}
     >
+      <PageHead data={data} />
+
       <main id="PAGE_CNT">
         <motion.div
           ref={REF}
@@ -341,41 +351,6 @@ export default function Home() {
                           </div>
                         </div>
                       </div>
-
-                      {/**
-                      <span>{project._siteID}</span>
-                      <br />
-                      <span>{project._siteName}</span>
-                      <br />
-                      <div
-                        className={`${styles.project_main_img}`}
-                        style={{
-                          background: `url(${project._siteImgs[0]})`,
-                          height: "300px",
-                          width: "200px",
-                        }}
-                      />
-                      <br />
-                      <p>{project._siteDesc}</p>
-                      <br />
-                      {project._siteImgs.map((img) => (
-                        <img
-                          data-src={img}
-                          className="lazyload"
-                          alt={`Image of ${project._siteName}`}
-                        />
-                      ))}
-                      <br />
-                      <a href={project._siteDemoLink}>Link</a>
-                      <br />
-                      <button
-                        onClick={() => {
-                          alert(project._siteID + " : " + project._siteName);
-                        }}
-                      >
-                        Learn More
-                      </button>
-                     */}
                     </div>
                   ))}
                 </div>
