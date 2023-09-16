@@ -62,6 +62,14 @@ export default function Home({ data }) {
     "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/ctfsamplesites_CDN/main/imgs/placeholders/red.webp",
   ];
 
+  /**
+   //! Add classes based on current images and non-placeholder images
+   
+    Ex: 2 imgs = DOUBLE_COLUMN
+        4 imgs = QUAD_COLUMN
+
+   * 
+   *  */
   const COLUMN_CLASSES = ["col-lg-6", "col-md-6", "col-sm-6", "col-xs-12"];
   const SINGLE_COLUMN = ["col-lg-12", "col-md-12", "col-sm-12", "col-xs-12"];
   const DOUBLE_COLUMN = ["col-lg-6", "col-md-6", "col-sm-6", "col-xs-6"];
