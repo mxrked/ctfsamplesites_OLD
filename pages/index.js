@@ -21,15 +21,25 @@ import styles from "../assets/styles/modules/Index/Index.module.css";
 import "../assets/styles/modules/Index/Index.module.css";
 
 export async function getStaticProps() {
-  // Fetch the JSON data from the public directory or an API
-  const protocol = process.env.NODE_ENV === "production" ? "https" : "http";
-  const host =
-    process.env.NODE_ENV === "production"
-      ? "ctfsamplesites.com"
-      : "localhost:3000";
-  const url = `${protocol}://${host}/json/page-head-data/Main.json`;
-  const response = await fetch(url); // Correct path
-  const data = await response.json();
+  let data = null;
+
+  try {
+    // Determine the correct URL based on the environment
+    const baseUrl =
+      process.env.NODE_ENV === "production"
+        ? "https://ctfsamplesites.com"
+        : "http://localhost:3000";
+
+    const response = await fetch(`${baseUrl}/json/page-head-data/Main.json`);
+
+    if (!response.ok) {
+      throw new Error("Network response not ok.");
+    }
+
+    data = await response.json();
+  } catch (error) {
+    console.error("Error fetching JSON data:", error);
+  }
 
   return {
     props: {
