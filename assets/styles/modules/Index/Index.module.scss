@@ -265,6 +265,21 @@
         }
       }
     }
+
+    .index_page_footer {
+      height: 120px;
+      width: 100%;
+      @include displayElement(flex, center, center);
+      font-family: "Consola Regular";
+      font-size: clamp(16px, 16px, 16px);
+
+      span {
+        a {
+          color: $BlueChill;
+          font-weight: bold;
+        }
+      }
+    }
   }
 }
 

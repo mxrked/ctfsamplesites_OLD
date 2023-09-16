@@ -228,4 +228,17 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.index_page .index_page_inner .index_page_footer {
+  height: 120px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Consola Regular";
+  font-size: 16px;
+}
+.index_page .index_page_inner .index_page_footer span a {
+  color: #1092a7;
+  font-weight: bold;
 }/*# sourceMappingURL=Index.module.css.map */
