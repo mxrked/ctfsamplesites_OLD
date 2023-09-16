@@ -24,13 +24,9 @@ export async function getStaticProps() {
   let data = null;
 
   try {
-    // Determine the correct URL based on the environment
-    const baseUrl =
-      process.env.NODE_ENV === "production"
-        ? "https://ctfsamplesites.com"
-        : "http://localhost:3000";
-
-    const response = await fetch(`${baseUrl}/json/page-head-data/Main.json`);
+    const response = await fetch(
+      "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/ctfsamplesites_CDN/main/files/json/page-head-data/Main.json"
+    );
 
     if (!response.ok) {
       throw new Error("Network response not ok.");
