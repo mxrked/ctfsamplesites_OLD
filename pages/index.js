@@ -137,6 +137,11 @@ export default function Home({ data }) {
     TriggerExitAnimations();
   }, []);
 
+  // Adding current year to website
+  useEffect(() => {
+    document.getElementById("year").innerText = new Date().getFullYear();
+  }, []);
+
   return (
     <div
       id="PAGE"
@@ -360,6 +365,17 @@ export default function Home({ data }) {
                   ))}
                 </div>
               </div>
+            </div>
+          </div>
+
+          <div className={`${styles.index_page_footer}`}>
+            <div>
+              <span>2023-</span>
+              <span id="year"></span>{" "}
+              <span>
+                , Created by{" "}
+                <a href="https://www.codingthefront.com">codingthefront.com</a>
+              </span>
             </div>
           </div>
         </motion.div>
