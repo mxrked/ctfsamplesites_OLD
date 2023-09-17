@@ -52,10 +52,15 @@
 
       span {
         font-family: "FG Semibold";
-        font-size: clamp(25px, 27px, 27px);
-        opacity: 0.6;
+        font-size: clamp(24px, 26px, 26px);
         display: block;
         margin-top: -5px;
+      }
+
+      .designer_text {
+        margin-top: 20px;
+        font-size: clamp(21px, 24px, 24px);
+        opacity: 0.6;
       }
     }
 
@@ -245,6 +250,10 @@
                       font-size: $Text;
                       font-family: "Consola Bold";
                       margin-bottom: 20px;
+
+                      &:hover {
+                        color: rgb(42, 229, 246);
+                      }
                     }
 
                     button {
@@ -256,6 +265,10 @@
                       font-size: $Link;
                       font-family: "Consola Bold";
                       @include displayElement(flex, center, center);
+
+                      &:hover {
+                        background-color: $Black;
+                      }
                     }
                   }
                 }
@@ -277,6 +290,10 @@
         a {
           color: $BlueChill;
           font-weight: bold;
+
+          &:hover {
+            color: rgb(42, 229, 246);
+          }
         }
       }
     }
