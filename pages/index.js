@@ -55,13 +55,6 @@ export default function Home({ data }) {
 
   const [PROJECTS, SET_PROJECTS] = useState([]);
 
-  const PLACEHOLDER_URLS = [
-    "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/ctfsamplesites_CDN/main/imgs/placeholders/blue.webp",
-    "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/ctfsamplesites_CDN/main/imgs/placeholders/green.webp",
-    "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/ctfsamplesites_CDN/main/imgs/placeholders/purple.webp",
-    "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/ctfsamplesites_CDN/main/imgs/placeholders/red.webp",
-  ];
-
   /**
    //! Add classes based on current images and non-placeholder images
    
@@ -70,11 +63,6 @@ export default function Home({ data }) {
 
    * 
    *  */
-  const COLUMN_CLASSES = ["col-lg-6", "col-md-6", "col-sm-6", "col-xs-12"];
-  const SINGLE_COLUMN = ["col-lg-12", "col-md-12", "col-sm-12", "col-xs-12"];
-  const DOUBLE_COLUMN = ["col-lg-6", "col-md-6", "col-sm-6", "col-xs-6"];
-  const TRIPLE_COLUMN = ["col-lg-4", "col-md-4", "col-sm-4", "col-xs-4"];
-  const QUAD_COLUMN = ["col-lg-3", "col-md-3", "col-sm-6", "col-xs-6"];
 
   // Triggering scroll animations
   useEffect(() => {
@@ -150,6 +138,109 @@ export default function Home({ data }) {
     document.getElementById("year").innerText = new Date().getFullYear();
   }, []);
 
+  // Hiding/changing project-img-holders
+  useEffect(() => {
+    const COLUMN_CLASSES = ["col-lg-3", "col-md-3", "col-sm-6", "col-xs-12"];
+    const SINGLE_COLUMN = ["col-lg-12", "col-md-12", "col-sm-12", "col-xs-12"];
+    const DOUBLE_COLUMN = ["col-lg-6", "col-md-6", "col-sm-6", "col-xs-6"];
+    const TRIPLE_COLUMN = ["col-lg-4", "col-md-4", "col-sm-4", "col-xs-4"];
+    const QUAD_COLUMN = ["col-lg-3", "col-md-3", "col-sm-6", "col-xs-6"];
+    const IMG_HOLDER_ROWS = document.querySelectorAll(
+      ".project-img-holder-row"
+    );
+    const PLACEHOLDER_URLS = [
+      "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/ctfsamplesites_CDN/main/imgs/placeholders/blue.webp",
+      "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/ctfsamplesites_CDN/main/imgs/placeholders/green.webp",
+      "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/ctfsamplesites_CDN/main/imgs/placeholders/purple.webp",
+      "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/ctfsamplesites_CDN/main/imgs/placeholders/red.webp",
+    ];
+
+    // Getting all the project-img-holder-rows
+    IMG_HOLDER_ROWS.forEach((row) => {
+      let numberDisplayed = 0; // Indicates the total amount of images that are displayed in each row
+      const IMG_HOLDERS = row.querySelectorAll(".project-img-holder");
+
+      // Hiding the imgs that have placeholder data-srcs
+      IMG_HOLDERS.forEach((holder) => {
+        const IMG_HOLDER_IMG = holder.querySelector(".project-img");
+
+        // Check if the image source is in PLACEHOLDER_URLS
+        if (
+          IMG_HOLDER_IMG &&
+          PLACEHOLDER_URLS.includes(IMG_HOLDER_IMG.getAttribute("data-src"))
+        ) {
+          holder.style.display = "none";
+        } else {
+          // Increment the counter for displayed elements in this row
+          numberDisplayed++;
+        }
+      });
+
+      // Now, `numberDisplayed` contains the number of displayed .project-img-holder elements in this row
+      // console.log("Displayed elements count in this row:", numberDisplayed);
+
+      // Removing old classes and adding new ones
+      IMG_HOLDERS.forEach((holder) => {
+        // No imgs
+        if (numberDisplayed === 0) {
+          // Removing empty space
+          row.closest(".project-imgs-holder").style.display = "none";
+
+          COLUMN_CLASSES.forEach((className) => {
+            holder.classList.remove(className);
+          });
+        } else {
+          // Showing project-imgs-holder
+          row.closest(".project-imgs-holder").style.display = "block";
+        }
+
+        // Single Column
+        if (numberDisplayed === 1) {
+          COLUMN_CLASSES.forEach((className) => {
+            holder.classList.remove(className);
+          });
+
+          SINGLE_COLUMN.forEach((className) => {
+            holder.classList.add(className);
+          });
+        }
+
+        // Double Column
+        if (numberDisplayed === 2) {
+          COLUMN_CLASSES.forEach((className) => {
+            holder.classList.remove(className);
+          });
+
+          DOUBLE_COLUMN.forEach((className) => {
+            holder.classList.add(className);
+          });
+        }
+
+        // Triple Column
+        if (numberDisplayed === 3) {
+          COLUMN_CLASSES.forEach((className) => {
+            holder.classList.remove(className);
+          });
+
+          TRIPLE_COLUMN.forEach((className) => {
+            holder.classList.add(className);
+          });
+        }
+
+        // Quad Column
+        if (numberDisplayed === 4) {
+          COLUMN_CLASSES.forEach((className) => {
+            holder.classList.remove(className);
+          });
+
+          QUAD_COLUMN.forEach((className) => {
+            holder.classList.add(className);
+          });
+        }
+      });
+    });
+  }, [PROJECTS]);
+
   return (
     <div
       id="PAGE"
@@ -169,8 +260,14 @@ export default function Home({ data }) {
             <h1 className="main-selected orientation-change-element half-second">
               codingthefront
             </h1>
+
             <span className="main-selected orientation-change-element half-second">
               SAMPLE WEBSITES
+            </span>
+            <span
+              className={`${styles.designer_text} main-selected orientation-change-element half-second`}
+            >
+              Winston-Salem NC, Web Designer
             </span>
           </div>
 
@@ -190,7 +287,8 @@ export default function Home({ data }) {
 
             <div className={`${styles.index_page_inner_text_inner}`}>
               <div className={`${styles.index_page_inner_text_inner_cnt}`}>
-                <p className="main-selected orientation-change-element half-second">
+                {/**  
+              <p className="main-selected orientation-change-element half-second">
                   Hello! My name is Parker Phelps. I am a Freelance Web
                   Developer based out in North Carolina.
                 </p>
@@ -213,6 +311,41 @@ export default function Home({ data }) {
                 <p className="main-selected orientation-change-element half-second">
                   There are ZERO limits to what I can create with my web
                   development knowledge. :)
+                </p>
+                */}
+                <p className="main-selected orientation-change-element half-second">
+                  Welcome to my website, where you can explore a variety of
+                  sample websites that may align with your vision for your
+                  online presence. I am Parker Phelps, a{" "}
+                  <strong className="main-selected">
+                    Freelance Web Developer
+                  </strong>{" "}
+                  based in North Carolina, specializing in crafting unique web
+                  solutions for businesses like yours. If you're looking for{" "}
+                  <strong className="main-selected">
+                    web design services in Winston-Salem, NC
+                  </strong>
+                  , or surrounding areas, you've come to the right place.
+                </p>
+
+                <p className="main-selected orientation-change-element half-second">
+                  My goal is to provide you with inspiration and ideas for your
+                  project. Whether you need a website for home improvement
+                  services, lawn care, pressure washing, painting companies,
+                  photography, or an art gallery, you'll find examples that
+                  showcase my capabilities.
+                </p>
+
+                <p className="main-selected orientation-change-element half-second">
+                  If you're ready to discuss your specific requirements or have
+                  any questions, please don't hesitate to{" "}
+                  <a
+                    href="https://www.codingthefront.com/contact"
+                    className="main-selected half-second"
+                  >
+                    reach out to me
+                  </a>
+                  . I'm here to help you bring your online vision to life!
                 </p>
               </div>
             </div>
@@ -238,13 +371,13 @@ export default function Home({ data }) {
                             className={`${styles.project_inner_cnt_top_cnt}`}
                           >
                             <span
-                              className={`${styles.project_heading} orientation-change-element half-second`}
+                              className={`${styles.project_heading} main-selected orientation-change-element half-second`}
                             >
                               {project._siteName}
                             </span>
 
                             <div
-                              className={`${styles.project_main_img_holder} orientation-change-element half-second`}
+                              className={`${styles.project_main_img_holder} main-selected orientation-change-element half-second`}
                             >
                               <div
                                 id={`projectMainImg${project._siteID}`}
@@ -255,70 +388,30 @@ export default function Home({ data }) {
                               />
                             </div>
 
-                            <div className={`${styles.project_imgs_holder}`}>
+                            <div
+                              className={`${styles.project_imgs_holder} project-imgs-holder`}
+                            >
                               <div
                                 className={`${styles.project_imgs_holder_box} container-fluid`}
                               >
                                 <div
-                                  className={`${styles.project_imgs_holder_row} row`}
+                                  className={`${styles.project_imgs_holder_row} project-img-holder-row row`}
                                 >
                                   {project._siteImgs.map((img, index) => (
                                     <div
                                       id={`sites${project._siteID}_img_holder${index}`}
                                       key={`site${project._siteID}_img_${index}`}
                                       className={`${styles.img} project-img-holder col-lg-3 col-md-3 col-sm-6 col-xs-12`}
-                                      onLoad={(e) => {
-                                        // if (
-                                        //   e.currentTarget
-                                        //     .querySelector(".project-img")
-                                        //     .getAttribute("data-src") ===
-                                        //   PLACEHOLDER_URLS[0]
-                                        // ) {
-                                        //   e.currentTarget.style.display =
-                                        //     "none";
-                                        // }
-                                        // if (
-                                        //   e.currentTarget
-                                        //     .querySelector(".project-img")
-                                        //     .getAttribute("data-src") ===
-                                        //   PLACEHOLDER_URLS[1]
-                                        // ) {
-                                        //   e.currentTarget.style.display =
-                                        //     "none";
-                                        // }
-                                        // if (
-                                        //   e.currentTarget
-                                        //     .querySelector(".project-img")
-                                        //     .getAttribute("data-src") ===
-                                        //   PLACEHOLDER_URLS[2]
-                                        // ) {
-                                        //   e.currentTarget.style.display =
-                                        //     "none";
-                                        // }
-                                        // if (
-                                        //   e.currentTarget
-                                        //     .querySelector(".project-img")
-                                        //     .getAttribute("data-src") ===
-                                        //   PLACEHOLDER_URLS[3]
-                                        // ) {
-                                        //   e.currentTarget.style.display =
-                                        //     "none";
-                                        // }
-                                        // const DISPLAYED_IMG_HOLDERS_LENGTH =
-                                        //   document.querySelectorAll(
-                                        //     ".project-img-holder[style='display: none;']"
-                                        //   ).length;
-                                      }}
                                     >
                                       <img
                                         id={`site${project._siteID}_img_${index}`}
                                         data-src={img}
                                         alt={img}
-                                        className={`lazyload project-img`}
+                                        className={`lazyload project-img main-selected orientation-change-element half-second`}
                                       />
 
                                       <button
-                                        className="half-second"
+                                        className="main-selected orientation-change-element half-second"
                                         onClick={(e) => {
                                           const MAIN_IMG =
                                             document.getElementById(
@@ -351,7 +444,7 @@ export default function Home({ data }) {
                           >
                             <a
                               href={project._siteDemoLink}
-                              className="half-second orientation-change-element"
+                              className="main-selected orientation-change-element half-second"
                             >
                               View Site
                             </a>
@@ -362,9 +455,11 @@ export default function Home({ data }) {
                                   `Opening site_${project._siteID}_modal`
                                 );
                               }}
-                              className="orientation-change-element half-second"
+                              className="main-selected orientation-change-element half-second"
                             >
-                              <span>Learn More</span>
+                              <span className="main-selected orientation-change-element half-second">
+                                Learn More
+                              </span>
                             </button>
                           </div>
                         </div>
@@ -378,11 +473,16 @@ export default function Home({ data }) {
 
           <div className={`${styles.index_page_footer}`}>
             <div>
-              <span>2023-</span>
-              <span id="year"></span>{" "}
-              <span>
+              <span className="main-selected half-second">2023-</span>
+              <span className="main-selected half-second" id="year"></span>
+              <span className="main-selected half-second">
                 , Created by{" "}
-                <a href="https://www.codingthefront.com">codingthefront.com</a>
+                <a
+                  href="https://www.codingthefront.com"
+                  className="main-selected half-second"
+                >
+                  codingthefront.com
+                </a>
               </span>
             </div>
           </div>
