@@ -55,6 +55,13 @@ export default function Home({ data }) {
 
   const [PROJECTS, SET_PROJECTS] = useState([]);
 
+  const PLACEHOLDER_URLS = [
+    "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/ctfsamplesites_CDN/main/imgs/placeholders/blue.webp",
+    "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/ctfsamplesites_CDN/main/imgs/placeholders/green.webp",
+    "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/ctfsamplesites_CDN/main/imgs/placeholders/purple.webp",
+    "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/ctfsamplesites_CDN/main/imgs/placeholders/red.webp",
+  ];
+
   /**
    //! Add classes based on current images and non-placeholder images
    
@@ -148,12 +155,6 @@ export default function Home({ data }) {
     const IMG_HOLDER_ROWS = document.querySelectorAll(
       ".project-img-holder-row"
     );
-    const PLACEHOLDER_URLS = [
-      "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/ctfsamplesites_CDN/main/imgs/placeholders/blue.webp",
-      "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/ctfsamplesites_CDN/main/imgs/placeholders/green.webp",
-      "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/ctfsamplesites_CDN/main/imgs/placeholders/purple.webp",
-      "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/ctfsamplesites_CDN/main/imgs/placeholders/red.webp",
-    ];
 
     // Getting all the project-img-holder-rows
     IMG_HOLDER_ROWS.forEach((row) => {
@@ -321,31 +322,31 @@ export default function Home({ data }) {
                     Freelance Web Developer
                   </strong>{" "}
                   based in North Carolina, specializing in crafting unique web
-                  solutions for businesses like yours. If you're looking for{" "}
+                  solutions for businesses like yours. If you are looking for{" "}
                   <strong className="main-selected">
                     web design services in Winston-Salem, NC
                   </strong>
-                  , or surrounding areas, you've come to the right place.
+                  , or surrounding areas, you have come to the right place.
                 </p>
 
                 <p className="main-selected orientation-change-element half-second">
                   My goal is to provide you with inspiration and ideas for your
                   project. Whether you need a website for home improvement
                   services, lawn care, pressure washing, painting companies,
-                  photography, or an art gallery, you'll find examples that
+                  photography, or an art gallery, you will find examples that
                   showcase my capabilities.
                 </p>
 
                 <p className="main-selected orientation-change-element half-second">
-                  If you're ready to discuss your specific requirements or have
-                  any questions, please don't hesitate to{" "}
+                  If you are ready to discuss your specific requirements or have
+                  any questions, please do not hesitate to{" "}
                   <a
                     href="https://www.codingthefront.com/contact"
                     className="main-selected half-second"
                   >
                     reach out to me
                   </a>
-                  . I'm here to help you bring your online vision to life!
+                  . I am here to help you bring your online vision to life!
                 </p>
               </div>
             </div>
