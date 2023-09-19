@@ -187,12 +187,15 @@ export default function Home({ data }) {
           // Removing empty space
           row.closest(".project-imgs-holder").style.display = "none";
 
+          row.closest(".project").classList.add(`${styles.no_imgs}`);
+
           COLUMN_CLASSES.forEach((className) => {
             holder.classList.remove(className);
           });
         } else {
           // Showing project-imgs-holder
           row.closest(".project-imgs-holder").style.display = "block";
+          row.closest(".project").classList.remove(`${styles.no_imgs}`);
         }
 
         // Single Column
@@ -358,7 +361,7 @@ export default function Home({ data }) {
                 className={`${styles.index_page_inner_projects_inner_box} container-fluid`}
               >
                 <div
-                  className={`${styles.index_page_inner_projects_inner_row} row`}
+                  className={`${styles.index_page_inner_projects_inner_row} project-row row`}
                 >
                   {PROJECTS.map((project) => (
                     <div
@@ -380,13 +383,25 @@ export default function Home({ data }) {
                             <div
                               className={`${styles.project_main_img_holder} main-selected orientation-change-element half-second`}
                             >
-                              <div
-                                id={`projectMainImg${project._siteID}`}
-                                className={`${styles.project_main_img}`}
-                                style={{
-                                  backgroundImage: `url(${project._siteImgs[0]})`,
-                                }}
-                              />
+                              {!PLACEHOLDER_URLS.includes(
+                                project._siteImgs[0]
+                              ) ? (
+                                <div
+                                  id={`projectMainImg${project._siteID}`}
+                                  className={`${styles.project_main_img}`}
+                                  style={{
+                                    backgroundImage: `url(${project._siteImgs[0]})`,
+                                  }}
+                                />
+                              ) : (
+                                <div
+                                  id={`projectMainImg${project._siteID}`}
+                                  className={`${styles.project_main_img}`}
+                                  style={{
+                                    backgroundImage: `url(https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/ctfsamplesites_CDN/main/imgs/no-image.webp)`,
+                                  }}
+                                />
+                              )}
                             </div>
 
                             <div
