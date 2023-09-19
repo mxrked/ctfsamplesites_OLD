@@ -9,6 +9,7 @@ import { useInView } from "react-intersection-observer";
 // Data/Functions/Images Imports
 import TriggerInViewMotion from "@/assets/functions/dom/triggers/TriggerInViewMotion";
 import DeclareStorageVariable from "@/assets/functions/data/storage/DeclareStorageVariable";
+import RemoveStorageVariable from "@/assets/functions/data/storage/RemoveStorageVariable";
 import { TriggerExitAnimations } from "@/assets/functions/dom/triggers/TriggerExitAnimations";
 
 import { FADE_IN } from "@/assets/animations/FADES";
@@ -155,6 +156,9 @@ export default function Home({ data }) {
     const IMG_HOLDER_ROWS = document.querySelectorAll(
       ".project-img-holder-row"
     );
+    const MODAL_IMG_HOLDER_ROWS = document.querySelectorAll(
+      ".project-modal-img-holder-row"
+    );
 
     // Getting all the project-img-holder-rows
     IMG_HOLDER_ROWS.forEach((row) => {
@@ -186,7 +190,6 @@ export default function Home({ data }) {
         if (numberDisplayed === 0) {
           // Removing empty space
           row.closest(".project-imgs-holder").style.display = "none";
-
           row.closest(".project").classList.add(`${styles.no_imgs}`);
 
           COLUMN_CLASSES.forEach((className) => {
@@ -243,6 +246,93 @@ export default function Home({ data }) {
         }
       });
     });
+
+    // Getting all the project-img-holder-rows
+    MODAL_IMG_HOLDER_ROWS.forEach((row) => {
+      let numberDisplayed = 0; // Indicates the total amount of images that are displayed in each row
+      const IMG_HOLDERS = row.querySelectorAll(".project-modal-img-holder");
+
+      // Hiding the imgs that have placeholder data-srcs
+      IMG_HOLDERS.forEach((holder) => {
+        const IMG_HOLDER_IMG = holder.querySelector(".project-modal-img");
+
+        // Check if the image source is in PLACEHOLDER_URLS
+        if (
+          IMG_HOLDER_IMG &&
+          PLACEHOLDER_URLS.includes(IMG_HOLDER_IMG.getAttribute("data-src"))
+        ) {
+          holder.style.display = "none";
+        } else {
+          // Increment the counter for displayed elements in this row
+          numberDisplayed++;
+        }
+      });
+
+      // Now, `numberDisplayed` contains the number of displayed .project-img-holder elements in this row
+      // console.log("Displayed elements count in this row:", numberDisplayed);
+
+      // Removing old classes and adding new ones
+      IMG_HOLDERS.forEach((holder) => {
+        // No imgs
+        if (numberDisplayed === 0) {
+          // Removing empty space
+          row.closest(".project-modal-imgs-holder").style.display = "none";
+          row.closest(".project-modal").classList.add(`${styles.no_imgs}`);
+
+          COLUMN_CLASSES.forEach((className) => {
+            holder.classList.remove(className);
+          });
+        } else {
+          // Showing project-imgs-holder
+          row.closest(".project-modal-imgs-holder").style.display = "block";
+          row.closest(".project-modal").classList.remove(`${styles.no_imgs}`);
+        }
+
+        // Single Column
+        if (numberDisplayed === 1) {
+          COLUMN_CLASSES.forEach((className) => {
+            holder.classList.remove(className);
+          });
+
+          SINGLE_COLUMN.forEach((className) => {
+            holder.classList.add(className);
+          });
+        }
+
+        // Double Column
+        if (numberDisplayed === 2) {
+          COLUMN_CLASSES.forEach((className) => {
+            holder.classList.remove(className);
+          });
+
+          DOUBLE_COLUMN.forEach((className) => {
+            holder.classList.add(className);
+          });
+        }
+
+        // Triple Column
+        if (numberDisplayed === 3) {
+          COLUMN_CLASSES.forEach((className) => {
+            holder.classList.remove(className);
+          });
+
+          TRIPLE_COLUMN.forEach((className) => {
+            holder.classList.add(className);
+          });
+        }
+
+        // Quad Column
+        if (numberDisplayed === 4) {
+          COLUMN_CLASSES.forEach((className) => {
+            holder.classList.remove(className);
+          });
+
+          QUAD_COLUMN.forEach((className) => {
+            holder.classList.add(className);
+          });
+        }
+      });
+    });
   }, [PROJECTS]);
 
   return (
@@ -251,6 +341,190 @@ export default function Home({ data }) {
       className={`${styles.index_page} index-page page full-second`}
     >
       <PageHead data={data} />
+
+      <div
+        onClick={(e) => {
+          e.currentTarget.style.opacity = 0;
+          e.currentTarget.style.visibility = "hidden";
+          e.currentTarget.style.pointerEvents = "none";
+
+          document.querySelectorAll(".project-modal").forEach((modal) => {
+            modal.style.pointerEvents = "none";
+            modal.style.overflowY = "hidden";
+            modal.style.opacity = 0;
+            modal.style.visibility = "hidden";
+          });
+
+          setTimeout(() => {
+            RemoveStorageVariable("session", "Modal Opened");
+
+            document.body.style.pointerEvents = "auto";
+            document.body.style.overflowY = "auto";
+          }, 1100);
+        }}
+        id="modalDarken"
+        className={`${styles.project_modal_darken} full-second`}
+      />
+
+      {PROJECTS.map((project) => (
+        <div
+          key={project._siteID}
+          id={`modal_${project._siteID}`}
+          className={`${styles.project_modal} project-modal full-second`}
+        >
+          <div className={`${styles.project_modal_inner}`}>
+            <div className={`${styles.project_modal_inner_top}`}>
+              <span
+                className={`${styles.site_id} main-selected orientation-change-element half-second`}
+              >
+                Site: <span className="main-selected">{project._siteID}</span>
+              </span>
+
+              <button
+                onClick={() => {
+                  document.getElementById("modalDarken").style.opacity = 0;
+                  document.getElementById("modalDarken").style.visibility =
+                    "hidden";
+                  document.getElementById("modalDarken").style.pointerEvents =
+                    "none";
+
+                  document
+                    .querySelectorAll(".project-modal")
+                    .forEach((modal) => {
+                      modal.style.pointerEvents = "none";
+                      modal.style.overflowY = "hidden";
+                      modal.style.opacity = 0;
+                      modal.style.visibility = "hidden";
+                    });
+
+                  setTimeout(() => {
+                    RemoveStorageVariable("session", "Modal Opened");
+
+                    document.body.style.pointerEvents = "auto";
+                    document.body.style.overflowY = "auto";
+                  }, 1100);
+                }}
+                className={`${styles.closer} main-selected orientation-change-element half-second`}
+              >
+                <span className="main-selected">Close</span>
+              </button>
+            </div>
+
+            <div
+              className={`${styles.project_modal_inner_project_background} project-background`}
+            >
+              <div
+                className={`${styles.project_modal_inner_project_background_box} container-fluid`}
+              >
+                <div
+                  className={`${styles.project_modal_inner_project_background_row} row`}
+                >
+                  <div
+                    className={`${styles.project_modal_inner_project_background_side} ${styles.project_modal_background_L} col-lg-5 col-md-5 col-sm-12 col-xs-12`}
+                  >
+                    <div
+                      className={`${styles.project_modal_inner_project_background_side_cnt}`}
+                    >
+                      <div
+                        className={`${styles.project_main_img_holder} main-selected orientation-change-element half-second`}
+                      >
+                        {!PLACEHOLDER_URLS.includes(project._siteImgs[0]) ? (
+                          <div
+                            id={`projectBackgroundMainImg${project._siteID}`}
+                            className={`${styles.project_main_img}`}
+                            style={{
+                              backgroundImage: `url(${project._siteImgs[0]})`,
+                            }}
+                          />
+                        ) : (
+                          <div
+                            id={`projectMainImg${project._siteID}`}
+                            className={`${styles.project_main_img}`}
+                            style={{
+                              backgroundImage: `url(https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/ctfsamplesites_CDN/main/imgs/no-image.webp)`,
+                            }}
+                          />
+                        )}
+                      </div>
+
+                      <div
+                        className={`${styles.project_imgs_holder} project-modal-imgs-holder`}
+                      >
+                        <div
+                          className={`${styles.project_imgs_holder_box} container-fluid`}
+                        >
+                          <div
+                            className={`${styles.project_imgs_holder_row} project-modal-img-holder-row row`}
+                          >
+                            {project._siteImgs.map((img, index) => (
+                              <div
+                                id={`sites${project._siteID}_img_holder${index}`}
+                                key={`site${project._siteID}_img_${index}`}
+                                className={`${styles.img} project-modal-img-holder col-lg-3 col-md-3 col-sm-6 col-xs-12`}
+                              >
+                                <img
+                                  id={`site${project._siteID}_img_${index}`}
+                                  data-src={img}
+                                  alt={img}
+                                  className={`lazyload project-modal-img main-selected orientation-change-element half-second`}
+                                />
+
+                                <button
+                                  className="main-selected orientation-change-element half-second"
+                                  onClick={(e) => {
+                                    const MAIN_IMG = document.getElementById(
+                                      `projectBackgroundMainImg${project._siteID}`
+                                    );
+                                    const SELECTED_IMG_ID = `site${project._siteID}_img_${index}`;
+
+                                    console.log(SELECTED_IMG_ID);
+
+                                    const SELECTED_IMG_SRC = document
+                                      .getElementById(SELECTED_IMG_ID)
+                                      .getAttribute("data-src");
+
+                                    console.log(SELECTED_IMG_SRC);
+
+                                    MAIN_IMG.style.backgroundImage = `url(${SELECTED_IMG_SRC})`;
+                                  }}
+                                ></button>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    className={`${styles.project_modal_inner_project_background_side} ${styles.project_modal_background_R} col-lg-7 col-md-7 col-sm-12 col-xs-12`}
+                  >
+                    <div
+                      className={`${styles.project_modal_inner_project_background_side_cnt}`}
+                    >
+                      <span
+                        className={`${styles.project_heading} main-selected orientation-change-element half-second`}
+                      >
+                        {project._siteName}
+                      </span>
+
+                      <p className="main-selected orientation-change-element half-second">
+                        {project._siteDesc}
+                      </p>
+
+                      <a
+                        href={project._siteDemoLink}
+                        className="main-selected orientation-change-element half-second"
+                      >
+                        View Site
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      ))}
 
       <main id="PAGE_CNT">
         <motion.div
@@ -470,6 +744,42 @@ export default function Home({ data }) {
                                 console.log(
                                   `Opening site_${project._siteID}_modal`
                                 );
+
+                                DeclareStorageVariable(
+                                  "session",
+                                  "Modal Opened",
+                                  true
+                                );
+
+                                document.body.style.pointerEvents = "none";
+                                document.body.style.overflowY = "hidden";
+
+                                document.getElementById(
+                                  "modalDarken"
+                                ).style.opacity = 1;
+                                document.getElementById(
+                                  "modalDarken"
+                                ).style.visibility = "visible";
+
+                                document.getElementById(
+                                  `modal_${project._siteID}`
+                                ).style.opacity = 1;
+                                document.getElementById(
+                                  `modal_${project._siteID}`
+                                ).style.visibility = "visible";
+
+                                setTimeout(() => {
+                                  document.getElementById(
+                                    `modal_${project._siteID}`
+                                  ).style.pointerEvents = "auto";
+                                  document.getElementById(
+                                    `modal_${project._siteID}`
+                                  ).style.overflowY = "auto";
+
+                                  document.getElementById(
+                                    "modalDarken"
+                                  ).style.pointerEvents = "auto";
+                                }, 1200);
                               }}
                               className="main-selected orientation-change-element half-second"
                             >
