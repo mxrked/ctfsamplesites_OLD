@@ -25,6 +25,159 @@
   top: 0;
   left: 0;
 }
+.index_page .project_modal_darken {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.55);
+  top: 0;
+  left: 0;
+  z-index: 495;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+}
+.index_page .project_modal {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgb(248, 247, 247);
+  z-index: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 1900px;
+  opacity: 0;
+  visibility: hidden;
+}
+.index_page .project_modal .project_modal_inner {
+  max-width: 1700px;
+  height: 100%;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+.index_page .project_modal .project_modal_inner .project_modal_inner_top {
+  width: 100%;
+  height: 160px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.index_page .project_modal .project_modal_inner .project_modal_inner_top .site_id {
+  font-family: "FG Bold";
+  font-size: 30px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.index_page .project_modal .project_modal_inner .project_modal_inner_top .site_id span {
+  font-family: "FG Semibold";
+  display: block;
+  margin-left: 15px;
+  font-size: 25px;
+}
+.index_page .project_modal .project_modal_inner .project_modal_inner_top .closer {
+  width: 100%;
+  height: 45px;
+  background-color: #232323;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  max-width: 85px;
+  font-family: "Consola Bold";
+  font-size: clamp(1rem, 0.34vw + 0.91rem, 1.19rem);
+}
+.index_page .project_modal .project_modal_inner .project_modal_inner_top .closer:hover {
+  background-color: #000000;
+}
+.index_page .project_modal .project_modal_inner .project_modal_inner_project_background {
+  white-space: pre-wrap;
+}
+.index_page .project_modal .project_modal_inner .project_modal_inner_project_background .project_modal_inner_project_background_box .project_modal_inner_project_background_row .project_modal_inner_project_background_side {
+  height: 600px;
+  display: flex;
+  align-items: center;
+}
+.index_page .project_modal .project_modal_inner .project_modal_inner_project_background .project_modal_inner_project_background_box .project_modal_inner_project_background_row .project_modal_inner_project_background_side .project_modal_inner_project_background_side_cnt {
+  width: 100%;
+}
+.index_page .project_modal .project_modal_inner .project_modal_inner_project_background .project_modal_inner_project_background_box .project_modal_inner_project_background_row .project_modal_background_L .project_modal_inner_project_background_side_cnt .project_main_img_holder {
+  height: 430px;
+  width: 100%;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  border: 2px solid #232323;
+}
+.index_page .project_modal .project_modal_inner .project_modal_inner_project_background .project_modal_inner_project_background_box .project_modal_inner_project_background_row .project_modal_background_L .project_modal_inner_project_background_side_cnt .project_main_img_holder .project_main_img {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.index_page .project_modal .project_modal_inner .project_modal_inner_project_background .project_modal_inner_project_background_box .project_modal_inner_project_background_row .project_modal_background_L .project_modal_inner_project_background_side_cnt .project_imgs_holder {
+  height: 100%;
+  max-height: 80px;
+  width: 100%;
+  padding-top: 10px;
+}
+.index_page .project_modal .project_modal_inner .project_modal_inner_project_background .project_modal_inner_project_background_box .project_modal_inner_project_background_row .project_modal_background_L .project_modal_inner_project_background_side_cnt .project_imgs_holder .project_imgs_holder_box .project_imgs_holder_row .img {
+  height: 105px;
+  position: relative;
+  border: 2px solid white;
+}
+.index_page .project_modal .project_modal_inner .project_modal_inner_project_background .project_modal_inner_project_background_box .project_modal_inner_project_background_row .project_modal_background_L .project_modal_inner_project_background_side_cnt .project_imgs_holder .project_imgs_holder_box .project_imgs_holder_row .img img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+.index_page .project_modal .project_modal_inner .project_modal_inner_project_background .project_modal_inner_project_background_box .project_modal_inner_project_background_row .project_modal_background_L .project_modal_inner_project_background_side_cnt .project_imgs_holder .project_imgs_holder_box .project_imgs_holder_row .img button {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.35);
+  top: 0;
+  left: 0;
+}
+.index_page .project_modal .project_modal_inner .project_modal_inner_project_background .project_modal_inner_project_background_box .project_modal_inner_project_background_row .project_modal_background_L .project_modal_inner_project_background_side_cnt .project_imgs_holder .project_imgs_holder_box .project_imgs_holder_row .img button:hover {
+  background-color: rgba(0, 0, 0, 0.55);
+}
+.index_page .project_modal .project_modal_inner .project_modal_inner_project_background .project_modal_inner_project_background_box .project_modal_inner_project_background_row .project_modal_background_R .project_modal_inner_project_background_side_cnt {
+  max-width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.index_page .project_modal .project_modal_inner .project_modal_inner_project_background .project_modal_inner_project_background_box .project_modal_inner_project_background_row .project_modal_background_R .project_modal_inner_project_background_side_cnt .project_heading {
+  font-family: "FG Semibold";
+  font-size: clamp(2.44rem, 2.38vw + 1.85rem, 3.75rem);
+}
+.index_page .project_modal .project_modal_inner .project_modal_inner_project_background .project_modal_inner_project_background_box .project_modal_inner_project_background_row .project_modal_background_R .project_modal_inner_project_background_side_cnt p {
+  font-family: "Consola Regular";
+  font-size: clamp(1rem, 0.34vw + 0.91rem, 1.19rem);
+  line-height: 30px;
+  margin-bottom: 40px;
+}
+.index_page .project_modal .project_modal_inner .project_modal_inner_project_background .project_modal_inner_project_background_box .project_modal_inner_project_background_row .project_modal_background_R .project_modal_inner_project_background_side_cnt a {
+  display: inline-block;
+  color: #1092a7;
+  font-size: clamp(1.25rem, 0.61vw + 1.1rem, 1.58rem);
+  font-family: "Consola Bold";
+  margin-bottom: 20px;
+}
+.index_page .project_modal .project_modal_inner .project_modal_inner_project_background .project_modal_inner_project_background_box .project_modal_inner_project_background_row .project_modal_background_R .project_modal_inner_project_background_side_cnt a:hover {
+  color: rgb(42, 229, 246);
+}
 .index_page .index_page_inner {
   max-width: 1300px;
   width: 100%;
