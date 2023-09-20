@@ -3,21 +3,39 @@ import { connectToDatabase } from "@/utils/connections/Main_connection";
 
 // const IPSTACK_KEY = "6eafccee3db72681fcd3589b807c0f2e";
 
-const fetchAWSIPRanges = async () => {
-  try {
-    const response = await axios.get(
-      "https://ip-ranges.amazonaws.com/ip-ranges.json"
-    );
-    const data = response.data;
-    return data.prefixes.map((entry) => entry.ip.ip_prefix); // This contains the AWS IP address ranges
-  } catch (error) {
-    console.error("Error fetching AWS IP ranges:", error);
-    return [];
-  }
+// Define the URL to fetch AWS IP ranges
+const AWS_IP_RANGES_URL = "https://ip-ranges.amazonaws.com/ip-ranges.json";
+// Define the IP ranges for Googlebot, GWC, and Zscaler
+const GOOGLEBOT_IP_RANGES = ["66.249.75.15", "66.249.75.19"];
+const GWC_IP_RANGES = ["74.125.0.0/16"]; // Google Web Crawler
+const ZSCALER_IP_RANGES = ["205.169.39.105"];
+
+const isExcludedIP = (ip, excludedRanges) => {
+  // Check if the IP address belongs to any of the excluded ranges
+  return excludedRanges.some((range) => {
+    if (range.includes("/")) {
+      // Handle CIDR notation
+      const [rangeIp, rangePrefix] = range.split("/");
+      const rangeStart = ipToNumber(rangeIp);
+      const ipNumber = ipToNumber(ip);
+      const shift = 32 - parseInt(rangePrefix);
+      const mask = (0xffffffff << shift) >>> 0;
+      return (rangeStart & mask) === (ipNumber & mask);
+    } else {
+      // Handle single IP address
+      return ip === range;
+    }
+  });
 };
 
-const isIPInExcludedRanges = (ip, excludedRanges) => {
-  return excludedRanges.some((range) => ip.startsWith(range));
+const ipToNumber = (ip) => {
+  const parts = ip.split(".");
+  return (
+    (parseInt(parts[0]) << 24) |
+    (parseInt(parts[1]) << 16) |
+    (parseInt(parts[2]) << 8) |
+    parseInt(parts[3])
+  );
 };
 
 export default async (req, res) => {
@@ -35,34 +53,43 @@ export default async (req, res) => {
     const DB = await connectToDatabase();
     const IP_COLLECTION = DB.collection("ips");
 
-    // Define the excluded IP ranges (AWS, GCP, Zscaler, Googlebot)
-    const excludedIPRanges = await fetchAWSIPRanges();
-    // You can add more excluded IP ranges if needed for other providers
+    // Fetch AWS IP ranges
+    const awsIpRangesResponse = await axios.get(AWS_IP_RANGES_URL);
+    const awsIpRanges = awsIpRangesResponse.data.prefixes.map(
+      (entry) => entry.ip_prefix
+    );
 
-    // Check if the current IP address is in the excluded ranges
-    if (isIPInExcludedRanges(IP_ADDRESS, excludedIPRanges)) {
-      console.log("Skipping AWS IP:", IP_ADDRESS);
-    } else {
-      // Check if the IP address already exists in the collection
-      const existingIP = await IP_COLLECTION.findOne({ IP_ADDRESS });
-
-      if (!existingIP) {
-        const currentDateTime = new Date().toISOString();
-
-        // Insert the document only if it doesn't already exist
-        await IP_COLLECTION.insertOne({
-          IP_ADDRESS,
-          added_at: currentDateTime,
-        });
-      }
+    // Check if the current IP address belongs to any excluded range
+    if (
+      !isExcludedIP(IP_ADDRESS, [
+        ...awsIpRanges,
+        ...GOOGLEBOT_IP_RANGES,
+        ...GWC_IP_RANGES,
+        ...ZSCALER_IP_RANGES,
+      ])
+    ) {
+      const currentDateTime = new Date().toISOString();
+      await IP_COLLECTION.insertOne({
+        IP_ADDRESS,
+        added_at: currentDateTime,
+      });
     }
 
-    // Remove null, Amazon Web Services (AWS) ip addresses, and others based on your criteria
+    // Remove null, excluded IP addresses, and others based on your criteria
     await IP_COLLECTION.deleteMany(
       {
         $or: [
           { IP_ADDRESS: null },
-          { IP_ADDRESS: { $in: excludedIPRanges } },
+          {
+            IP_ADDRESS: {
+              $in: [
+                ...awsIpRanges,
+                ...GOOGLEBOT_IP_RANGES,
+                ...GWC_IP_RANGES,
+                ...ZSCALER_IP_RANGES,
+              ],
+            },
+          },
           // Add more conditions for other excluded IP ranges if needed
         ],
       },
