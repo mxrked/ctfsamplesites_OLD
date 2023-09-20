@@ -511,12 +511,127 @@ export default function Home({ data }) {
                         {project._siteDesc}
                       </p>
 
+                      <div className={`${styles.prices}`}>
+                        <ul>
+                          <li className="main-selected orientation-change-element half-second">
+                            Regular
+                          </li>
+                          <li className="main-selected orientation-change-element half-second">
+                            {project._siteRegularPrice_M} - $22 monthly after.
+                          </li>
+                          <li className="main-selected orientation-change-element half-second">
+                            {project._siteRegularPrice_A} - $279 yearly after.
+                          </li>
+                        </ul>
+                        <ul>
+                          <li className="main-selected orientation-change-element half-second">
+                            Renting
+                          </li>
+                          <li className="main-selected orientation-change-element half-second">
+                            {project._siteRentingPrice} every month.
+                          </li>
+                        </ul>
+                      </div>
+
                       <a
                         href={project._siteDemoLink}
                         className="main-selected orientation-change-element half-second"
                       >
                         View Site
                       </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className={`${styles.project_modal_inner_project_bottom}`}>
+              <div
+                className={`${styles.project_modal_inner_project_bottom_box} container-fluid`}
+              >
+                <div
+                  className={`${styles.project_modal_inner_project_bottom_row} row`}
+                >
+                  <div
+                    className={`${styles.project_modal_inner_project_bottom_side} ${styles.process_side} col-lg-12 col-md-12 col-sm-12 col-xs-12`}
+                  >
+                    <div
+                      className={`${styles.project_modal_inner_project_bottom_side_cnt}`}
+                    >
+                      <span
+                        className={`${styles.side_heading} main-selected orientation-change-element half-second`}
+                      >
+                        The Process
+                      </span>
+
+                      {project._siteProcess.map((step) => (
+                        <ul
+                          key={project._siteID}
+                          className={`${styles.process_set}`}
+                        >
+                          <li className="main-selected orientation-change-element half-second">
+                            {step.title}
+                          </li>
+                          <li className="main-selected orientation-change-element half-second">
+                            {step.text}
+                          </li>
+                        </ul>
+                      ))}
+                    </div>
+                  </div>
+                  <div
+                    className={`${styles.project_modal_inner_project_bottom_side} ${styles.goals_side} col-lg-8 col-md-8 col-sm-8 col-xs-12`}
+                  >
+                    <div
+                      className={`${styles.project_modal_inner_project_bottom_side_cnt}`}
+                    >
+                      <span
+                        className={`${styles.side_heading} main-selected orientation-change-element half-second`}
+                      >
+                        The Goals
+                      </span>
+
+                      {project._siteGoals.map((goal) => (
+                        <ul
+                          key={project._siteID}
+                          className={`${styles.process_set}`}
+                        >
+                          <li className="main-selected orientation-change-element half-second">
+                            {goal.title}
+                          </li>
+                          <li className="main-selected orientation-change-element half-second">
+                            {goal.text}
+                          </li>
+                        </ul>
+                      ))}
+                    </div>
+                  </div>
+                  <div
+                    className={`${styles.project_modal_inner_project_bottom_side} ${styles.tools_side} col-lg-4 col-md-4 col-sm-4 col-xs-12`}
+                  >
+                    <div
+                      className={`${styles.project_modal_inner_project_bottom_side_cnt}`}
+                    >
+                      <span
+                        className={`${styles.side_heading} main-selected orientation-change-element half-second`}
+                      >
+                        The Tools
+                      </span>
+
+                      {project._siteTools.map((tool) => (
+                        <ul
+                          key={project._siteID}
+                          className={`${styles.process_set}`}
+                        >
+                          <li className="main-selected orientation-change-element half-second">
+                            <img
+                              data-src={tool.src}
+                              alt={tool.title}
+                              className="lazyload main-selected orientation-change-element half-second"
+                            />
+                          </li>
+                        </ul>
+                      ))}
                     </div>
                   </div>
                 </div>
