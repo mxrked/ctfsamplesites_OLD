@@ -75,6 +75,34 @@ export default async (req, res) => {
       });
     }
 
+    // Define the aggregation pipeline to identify and delete duplicates
+    const deduplicationPipeline = [
+      {
+        $group: {
+          _id: "$IP_ADDRESS",
+          duplicates: { $addToSet: "$_id" },
+          count: { $sum: 1 },
+        },
+      },
+      {
+        $match: {
+          count: { $gt: 1 }, // Filter for duplicates
+        },
+      },
+    ];
+
+    // Execute the aggregation pipeline to find duplicate documents
+    const duplicateResults = await IP_COLLECTION.aggregate(
+      deduplicationPipeline
+    ).toArray();
+
+    // Iterate through the results and remove duplicates
+    for (const result of duplicateResults) {
+      // Keep one document (you can choose how to determine which one to keep) and delete the rest
+      const [documentToKeep, ...documentsToDelete] = result.duplicates;
+      await IP_COLLECTION.deleteMany({ _id: { $in: documentsToDelete } });
+    }
+
     // Remove null, excluded IP addresses, and others based on your criteria
     await IP_COLLECTION.deleteMany(
       {
