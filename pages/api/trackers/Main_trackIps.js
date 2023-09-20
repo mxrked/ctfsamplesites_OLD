@@ -41,11 +41,18 @@ export default async (req, res) => {
 
     // Check if the current IP address is in the excluded ranges
     if (!isIPInExcludedRanges(IP_ADDRESS, excludedIPRanges)) {
-      const currentDateTime = new Date().toISOString();
-      await IP_COLLECTION.insertOne({
-        IP_ADDRESS,
-        added_at: currentDateTime,
-      });
+      // Check if the IP address already exists in the collection
+      const existingIP = await IP_COLLECTION.findOne({ IP_ADDRESS });
+
+      if (!existingIP) {
+        const currentDateTime = new Date().toISOString();
+
+        // Insert the document only if it doesn't already exist
+        await IP_COLLECTION.insertOne({
+          IP_ADDRESS,
+          added_at: currentDateTime,
+        });
+      }
     }
 
     // Remove null, Amazon Web Services (AWS) ip addresses, and others based on your criteria
