@@ -40,7 +40,9 @@ export default async (req, res) => {
     // You can add more excluded IP ranges if needed for other providers
 
     // Check if the current IP address is in the excluded ranges
-    if (!isIPInExcludedRanges(IP_ADDRESS, excludedIPRanges)) {
+    if (isIPInExcludedRanges(IP_ADDRESS, excludedIPRanges)) {
+      console.log("Skipping AWS IP:", IP_ADDRESS);
+    } else {
       // Check if the IP address already exists in the collection
       const existingIP = await IP_COLLECTION.findOne({ IP_ADDRESS });
 
