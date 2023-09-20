@@ -259,15 +259,22 @@ function MyApp({ Component, pageProps }) {
     });
   }, []);
 
-  //! Showing Page after some time
+  //! Display Page after some time
   useEffect(() => {
     setTimeout(() => {
-      document.querySelectorAll(".page").forEach((page) => {
-        page.style.opacity = 1;
-        page.style.visibility = "visible";
-      });
-    }, 500);
-  }, [router]);
+      if (document.querySelector(".page")) {
+        document.querySelectorAll(".page").forEach((page) => {
+          page.style.opacity = 1;
+          page.style.visibility = "visible";
+
+          if (!sessionStorage.getItem("Modal Opened")) {
+            // page.style.overflowY = "auto";
+            page.style.pointerEvents = "auto";
+          }
+        });
+      }
+    }, 1500);
+  }, []);
 
   return <Component {...pageProps} />;
 }
