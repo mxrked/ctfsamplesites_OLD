@@ -10,6 +10,63 @@
       "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/ctfsamplesites_CDN/main/imgs/placeholders/red.webp"
     ],
     "_siteDesc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    "_siteRegularPrice_M": "$437.00",
+    "_siteRegularPrice_A": "$679.00",
+    "_siteRentingPrice": "$61.00",
+    "_siteProcess": [
+      {
+        "title": "Materials",
+        "text": "Before the design phase could begin, I had to gather the necessary materials for the project. Those materials being: Images, Colors/Theme, Fonts, Text."
+      },
+      {
+        "title": "Design",
+        "text": "After accquiring the materials, I used Adobe XD to build a website layout and based used this as a guide on how the website will look after completion."
+      },
+      {
+        "title": "Setup",
+        "text": "To make the project a bit simpler, I went ahead and setup a VS Code enviroment to create a developer friendly experience and in thus creating a higher quality project."
+      },
+      {
+        "title": "Building",
+        "text": "With this step taking the longest, I wanted to make sure that the quality of the project was always a priority. Using my 5+ years of experience, I experimented and used ethical practices to construct the project."
+      },
+      {
+        "title": "Result",
+        "text": "As the final step, I will send an invoice or request a check to be sent to my home. Once that is done, the project will be sent up to a production server for the world to see."
+      }
+    ],
+    "_siteTools": [
+      {
+        "title": "Adobe XD",
+        "src": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/ctfsamplesites_CDN/main/icons/programming-languages/adobe-xd.webp"
+      },
+      {
+        "title": "ReactJS",
+        "src": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/ctfsamplesites_CDN/main/icons/programming-languages/react.webp"
+      },
+      {
+        "title": "Next.js",
+        "src": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/ctfsamplesites_CDN/main/icons/programming-languages/nextjs.webp"
+      },
+      {
+        "title": "Bootstrap",
+        "src": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/ctfsamplesites_CDN/main/icons/programming-languages/nextjs.webp"
+      },
+      {
+        "title": "Sass",
+        "src": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/ctfsamplesites_CDN/main/icons/programming-languages/sass.webp"
+      },
+      {
+        "title": "MongoDB",
+        "src": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/ctfsamplesites_CDN/main/icons/programming-languages/mongo-db.webp"
+      }
+    ],
+    "_siteGoals": [
+      { "title": "Goal 1", "text": "" },
+      { "title": "Goal 2", "text": "" },
+      { "title": "Goal 3", "text": "" },
+      { "title": "Goal 4", "text": "" }
+    ],
     "_siteDemoLink": "/home-improvement"
   },
   {
@@ -22,7 +79,64 @@
       "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/ctfsamplesites_CDN/main/imgs/placeholders/purple.webp",
       "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/ctfsamplesites_CDN/main/imgs/placeholders/red.webp"
     ],
+    "_siteRegularPrice_M": "$437.00",
+    "_siteRegularPrice_A": "$679.00",
+    "_siteRentingPrice": "$61.00",
     "_siteDesc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    "_siteProcess": [
+      {
+        "title": "Materials",
+        "text": "Before the design phase could begin, I had to gather the necessary materials for the project. Those materials being: Images, Colors/Theme, Fonts, Text."
+      },
+      {
+        "title": "Design",
+        "text": "After accquiring the materials, I used Adobe XD to build a website layout and based used this as a guide on how the website will look after completion."
+      },
+      {
+        "title": "Setup",
+        "text": "To make the project a bit simpler, I went ahead and setup a VS Code enviroment to create a developer friendly experience and in thus creating a higher quality project."
+      },
+      {
+        "title": "Building",
+        "text": "With this step taking the longest, I wanted to make sure that the quality of the project was always a priority. Using my 5+ years of experience, I experimented and used ethical practices to construct the project."
+      },
+      {
+        "title": "Result",
+        "text": "As the final step, I will send an invoice or request a check to be sent to my home. Once that is done, the project will be sent up to a production server for the world to see."
+      }
+    ],
+    "_siteTools": [
+      {
+        "title": "Adobe XD",
+        "src": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/ctfsamplesites_CDN/main/icons/programming-languages/adobe-xd.webp"
+      },
+      {
+        "title": "ReactJS",
+        "src": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/ctfsamplesites_CDN/main/icons/programming-languages/react.webp"
+      },
+      {
+        "title": "Next.js",
+        "src": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/ctfsamplesites_CDN/main/icons/programming-languages/nextjs.webp"
+      },
+      {
+        "title": "Bootstrap",
+        "src": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/ctfsamplesites_CDN/main/icons/programming-languages/nextjs.webp"
+      },
+      {
+        "title": "Sass",
+        "src": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/ctfsamplesites_CDN/main/icons/programming-languages/sass.webp"
+      },
+      {
+        "title": "MongoDB",
+        "src": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/ctfsamplesites_CDN/main/icons/programming-languages/mongo-db.webp"
+      }
+    ],
+    "_siteGoals": [
+      { "title": "Goal 1", "text": "" },
+      { "title": "Goal 2", "text": "" },
+      { "title": "Goal 3", "text": "" },
+      { "title": "Goal 4", "text": "" }
+    ],
     "_siteDemoLink": "/painting"
   },
   {
@@ -35,7 +149,64 @@
       "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/ctfsamplesites_CDN/main/imgs/placeholders/purple.webp",
       "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/ctfsamplesites_CDN/main/imgs/placeholders/red.webp"
     ],
+    "_siteRegularPrice_M": "$437.00",
+    "_siteRegularPrice_A": "$679.00",
+    "_siteRentingPrice": "$61.00",
     "_siteDesc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    "_siteProcess": [
+      {
+        "title": "Materials",
+        "text": "Before the design phase could begin, I had to gather the necessary materials for the project. Those materials being: Images, Colors/Theme, Fonts, Text."
+      },
+      {
+        "title": "Design",
+        "text": "After accquiring the materials, I used Adobe XD to build a website layout and based used this as a guide on how the website will look after completion."
+      },
+      {
+        "title": "Setup",
+        "text": "To make the project a bit simpler, I went ahead and setup a VS Code enviroment to create a developer friendly experience and in thus creating a higher quality project."
+      },
+      {
+        "title": "Building",
+        "text": "With this step taking the longest, I wanted to make sure that the quality of the project was always a priority. Using my 5+ years of experience, I experimented and used ethical practices to construct the project."
+      },
+      {
+        "title": "Result",
+        "text": "As the final step, I will send an invoice or request a check to be sent to my home. Once that is done, the project will be sent up to a production server for the world to see."
+      }
+    ],
+    "_siteTools": [
+      {
+        "title": "Adobe XD",
+        "src": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/ctfsamplesites_CDN/main/icons/programming-languages/adobe-xd.webp"
+      },
+      {
+        "title": "ReactJS",
+        "src": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/ctfsamplesites_CDN/main/icons/programming-languages/react.webp"
+      },
+      {
+        "title": "Next.js",
+        "src": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/ctfsamplesites_CDN/main/icons/programming-languages/nextjs.webp"
+      },
+      {
+        "title": "Bootstrap",
+        "src": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/ctfsamplesites_CDN/main/icons/programming-languages/nextjs.webp"
+      },
+      {
+        "title": "Sass",
+        "src": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/ctfsamplesites_CDN/main/icons/programming-languages/sass.webp"
+      },
+      {
+        "title": "MongoDB",
+        "src": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/ctfsamplesites_CDN/main/icons/programming-languages/mongo-db.webp"
+      }
+    ],
+    "_siteGoals": [
+      { "title": "Goal 1", "text": "" },
+      { "title": "Goal 2", "text": "" },
+      { "title": "Goal 3", "text": "" },
+      { "title": "Goal 4", "text": "" }
+    ],
     "_siteDemoLink": "/pressure-washing"
   },
   {
@@ -48,7 +219,64 @@
       "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/ctfsamplesites_CDN/main/imgs/placeholders/purple.webp",
       "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/ctfsamplesites_CDN/main/imgs/placeholders/red.webp"
     ],
+    "_siteRegularPrice_M": "$437.00",
+    "_siteRegularPrice_A": "$679.00",
+    "_siteRentingPrice": "$61.00",
     "_siteDesc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    "_siteProcess": [
+      {
+        "title": "Materials",
+        "text": "Before the design phase could begin, I had to gather the necessary materials for the project. Those materials being: Images, Colors/Theme, Fonts, Text."
+      },
+      {
+        "title": "Design",
+        "text": "After accquiring the materials, I used Adobe XD to build a website layout and based used this as a guide on how the website will look after completion."
+      },
+      {
+        "title": "Setup",
+        "text": "To make the project a bit simpler, I went ahead and setup a VS Code enviroment to create a developer friendly experience and in thus creating a higher quality project."
+      },
+      {
+        "title": "Building",
+        "text": "With this step taking the longest, I wanted to make sure that the quality of the project was always a priority. Using my 5+ years of experience, I experimented and used ethical practices to construct the project."
+      },
+      {
+        "title": "Result",
+        "text": "As the final step, I will send an invoice or request a check to be sent to my home. Once that is done, the project will be sent up to a production server for the world to see."
+      }
+    ],
+    "_siteTools": [
+      {
+        "title": "Adobe XD",
+        "src": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/ctfsamplesites_CDN/main/icons/programming-languages/adobe-xd.webp"
+      },
+      {
+        "title": "ReactJS",
+        "src": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/ctfsamplesites_CDN/main/icons/programming-languages/react.webp"
+      },
+      {
+        "title": "Next.js",
+        "src": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/ctfsamplesites_CDN/main/icons/programming-languages/nextjs.webp"
+      },
+      {
+        "title": "Bootstrap",
+        "src": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/ctfsamplesites_CDN/main/icons/programming-languages/nextjs.webp"
+      },
+      {
+        "title": "Sass",
+        "src": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/ctfsamplesites_CDN/main/icons/programming-languages/sass.webp"
+      },
+      {
+        "title": "MongoDB",
+        "src": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/ctfsamplesites_CDN/main/icons/programming-languages/mongo-db.webp"
+      }
+    ],
+    "_siteGoals": [
+      { "title": "Goal 1", "text": "" },
+      { "title": "Goal 2", "text": "" },
+      { "title": "Goal 3", "text": "" },
+      { "title": "Goal 4", "text": "" }
+    ],
     "_siteDemoLink": "/lawn-care"
   },
   {
@@ -61,7 +289,64 @@
       "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/ctfsamplesites_CDN/main/imgs/placeholders/purple.webp",
       "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/ctfsamplesites_CDN/main/imgs/placeholders/red.webp"
     ],
+    "_siteRegularPrice_M": "$437.00",
+    "_siteRegularPrice_A": "$679.00",
+    "_siteRentingPrice": "$61.00",
     "_siteDesc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    "_siteProcess": [
+      {
+        "title": "Materials",
+        "text": "Before the design phase could begin, I had to gather the necessary materials for the project. Those materials being: Images, Colors/Theme, Fonts, Text."
+      },
+      {
+        "title": "Design",
+        "text": "After accquiring the materials, I used Adobe XD to build a website layout and based used this as a guide on how the website will look after completion."
+      },
+      {
+        "title": "Setup",
+        "text": "To make the project a bit simpler, I went ahead and setup a VS Code enviroment to create a developer friendly experience and in thus creating a higher quality project."
+      },
+      {
+        "title": "Building",
+        "text": "With this step taking the longest, I wanted to make sure that the quality of the project was always a priority. Using my 5+ years of experience, I experimented and used ethical practices to construct the project."
+      },
+      {
+        "title": "Result",
+        "text": "As the final step, I will send an invoice or request a check to be sent to my home. Once that is done, the project will be sent up to a production server for the world to see."
+      }
+    ],
+    "_siteTools": [
+      {
+        "title": "Adobe XD",
+        "src": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/ctfsamplesites_CDN/main/icons/programming-languages/adobe-xd.webp"
+      },
+      {
+        "title": "ReactJS",
+        "src": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/ctfsamplesites_CDN/main/icons/programming-languages/react.webp"
+      },
+      {
+        "title": "Next.js",
+        "src": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/ctfsamplesites_CDN/main/icons/programming-languages/nextjs.webp"
+      },
+      {
+        "title": "Bootstrap",
+        "src": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/ctfsamplesites_CDN/main/icons/programming-languages/nextjs.webp"
+      },
+      {
+        "title": "Sass",
+        "src": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/ctfsamplesites_CDN/main/icons/programming-languages/sass.webp"
+      },
+      {
+        "title": "MongoDB",
+        "src": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/ctfsamplesites_CDN/main/icons/programming-languages/mongo-db.webp"
+      }
+    ],
+    "_siteGoals": [
+      { "title": "Goal 1", "text": "" },
+      { "title": "Goal 2", "text": "" },
+      { "title": "Goal 3", "text": "" },
+      { "title": "Goal 4", "text": "" }
+    ],
     "_siteDemoLink": "/art-gallery"
   },
   {
@@ -74,7 +359,64 @@
       "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/ctfsamplesites_CDN/main/imgs/placeholders/purple.webp",
       "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/ctfsamplesites_CDN/main/imgs/placeholders/red.webp"
     ],
+    "_siteRegularPrice_M": "$437.00",
+    "_siteRegularPrice_A": "$679.00",
+    "_siteRentingPrice": "$61.00",
     "_siteDesc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    "_siteProcess": [
+      {
+        "title": "Materials",
+        "text": "Before the design phase could begin, I had to gather the necessary materials for the project. Those materials being: Images, Colors/Theme, Fonts, Text."
+      },
+      {
+        "title": "Design",
+        "text": "After accquiring the materials, I used Adobe XD to build a website layout and based used this as a guide on how the website will look after completion."
+      },
+      {
+        "title": "Setup",
+        "text": "To make the project a bit simpler, I went ahead and setup a VS Code enviroment to create a developer friendly experience and in thus creating a higher quality project."
+      },
+      {
+        "title": "Building",
+        "text": "With this step taking the longest, I wanted to make sure that the quality of the project was always a priority. Using my 5+ years of experience, I experimented and used ethical practices to construct the project."
+      },
+      {
+        "title": "Result",
+        "text": "As the final step, I will send an invoice or request a check to be sent to my home. Once that is done, the project will be sent up to a production server for the world to see."
+      }
+    ],
+    "_siteTools": [
+      {
+        "title": "Adobe XD",
+        "src": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/ctfsamplesites_CDN/main/icons/programming-languages/adobe-xd.webp"
+      },
+      {
+        "title": "ReactJS",
+        "src": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/ctfsamplesites_CDN/main/icons/programming-languages/react.webp"
+      },
+      {
+        "title": "Next.js",
+        "src": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/ctfsamplesites_CDN/main/icons/programming-languages/nextjs.webp"
+      },
+      {
+        "title": "Bootstrap",
+        "src": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/ctfsamplesites_CDN/main/icons/programming-languages/nextjs.webp"
+      },
+      {
+        "title": "Sass",
+        "src": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/ctfsamplesites_CDN/main/icons/programming-languages/sass.webp"
+      },
+      {
+        "title": "MongoDB",
+        "src": "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/ctfsamplesites_CDN/main/icons/programming-languages/mongo-db.webp"
+      }
+    ],
+    "_siteGoals": [
+      { "title": "Goal 1", "text": "" },
+      { "title": "Goal 2", "text": "" },
+      { "title": "Goal 3", "text": "" },
+      { "title": "Goal 4", "text": "" }
+    ],
     "_siteDemoLink": "/photography"
   }
 ]
