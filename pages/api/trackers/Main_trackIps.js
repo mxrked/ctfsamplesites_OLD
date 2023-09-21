@@ -1,4 +1,5 @@
 import axios from "axios";
+const { execSync } = require("child_process");
 import { connectToDatabase } from "@/utils/connections/Main_connection";
 
 // const IPSTACK_KEY = "6eafccee3db72681fcd3589b807c0f2e";
@@ -38,6 +39,25 @@ const ipToNumber = (ip) => {
   );
 };
 
+const getAWSCIDRRanges = () => {
+  try {
+    const cmd =
+      "aws ec2 describe-managed-prefix-lists --query \"PrefixLists[?PrefixListName=='com.amazonaws.global.cloudfront.origin-facing'].[PrefixListId]\" --output text";
+    const prefixListId = execSync(cmd, { encoding: "utf-8" }).trim();
+    const cmd2 = `aws ec2 describe-managed-prefix-lists --query "PrefixLists[?PrefixListId==\'${prefixListId}\'].[PrefixListEntries]" --output json`;
+    const prefixListEntries = JSON.parse(execSync(cmd2, { encoding: "utf-8" }));
+
+    const awsIpRanges = [];
+    for (const entry of prefixListEntries[0]) {
+      awsIpRanges.push(entry.Cidr);
+    }
+    return awsIpRanges;
+  } catch (error) {
+    console.error("Error fetching AWS IP ranges: " + error);
+    return [];
+  }
+};
+
 export default async (req, res) => {
   const TARGET_ADDED_AT = req.query.targetAddedAt; // Getting the added_at value for each index
   const { headers } = req;
@@ -54,10 +74,11 @@ export default async (req, res) => {
     const IP_COLLECTION = DB.collection("ips");
 
     // Fetch AWS IP ranges
-    const awsIpRangesResponse = await axios.get(AWS_IP_RANGES_URL);
-    const awsIpRanges = awsIpRangesResponse.data.prefixes.map(
-      (entry) => entry.ip_prefix
-    );
+    // const awsIpRangesResponse = await axios.get(AWS_IP_RANGES_URL);
+    // const awsIpRanges = awsIpRangesResponse.data.prefixes.map(
+    //   (entry) => entry.ip_prefix
+    // );
+    const awsIpRanges = getAWSCIDRRanges();
 
     // Check if the current IP address belongs to any excluded range
     if (
