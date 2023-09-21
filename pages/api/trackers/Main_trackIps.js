@@ -47,9 +47,20 @@ const getAWSCIDRRanges = () => {
     const cmd2 = `aws ec2 describe-managed-prefix-lists --query "PrefixLists[?PrefixListId==\'${prefixListId}\'].[PrefixListEntries]" --output json`;
     const prefixListEntries = JSON.parse(execSync(cmd2, { encoding: "utf-8" }));
 
+    if (!prefixListEntries) {
+      // Handle the case where prefixListEntries is null or undefined
+      console.error("Prefix List Entries are null or undefined");
+      return [];
+    }
+
     const awsIpRanges = [];
     for (const entry of prefixListEntries[0]) {
-      awsIpRanges.push(entry.Cidr);
+      // Check if entry is an object and has a Cidr property that is not null
+      if (typeof entry === "object" && entry.Cidr !== null) {
+        awsIpRanges.push(entry.Cidr);
+      } else {
+        console.warn("Skipping entry without valid Cidr:", entry);
+      }
     }
     return awsIpRanges;
   } catch (error) {
