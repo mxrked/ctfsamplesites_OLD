@@ -62,10 +62,16 @@
       }
     ],
     "_siteGoals": [
-      { "title": "Goal 1", "text": "" },
-      { "title": "Goal 2", "text": "" },
-      { "title": "Goal 3", "text": "" },
-      { "title": "Goal 4", "text": "" }
+      {
+        "title": "Goal 1",
+        "text": "Create responsive and high quality pages."
+      },
+      { "title": "Goal 2", "text": "Create a functional contact form." },
+      {
+        "title": "Goal 3",
+        "text": "Use accurate information for the website based on the niche."
+      },
+      { "title": "Goal 4", "text": "Add great SEO and index high on Google." }
     ],
     "_siteDemoLink": "/home-improvement"
   },
@@ -132,10 +138,16 @@
       }
     ],
     "_siteGoals": [
-      { "title": "Goal 1", "text": "" },
-      { "title": "Goal 2", "text": "" },
-      { "title": "Goal 3", "text": "" },
-      { "title": "Goal 4", "text": "" }
+      {
+        "title": "Goal 1",
+        "text": "Create responsive and high quality pages."
+      },
+      { "title": "Goal 2", "text": "Create a functional contact form." },
+      {
+        "title": "Goal 3",
+        "text": "Use accurate information for the website based on the niche."
+      },
+      { "title": "Goal 4", "text": "Add great SEO and index high on Google." }
     ],
     "_siteDemoLink": "/painting"
   },
@@ -202,10 +214,16 @@
       }
     ],
     "_siteGoals": [
-      { "title": "Goal 1", "text": "" },
-      { "title": "Goal 2", "text": "" },
-      { "title": "Goal 3", "text": "" },
-      { "title": "Goal 4", "text": "" }
+      {
+        "title": "Goal 1",
+        "text": "Create responsive and high quality pages."
+      },
+      { "title": "Goal 2", "text": "Create a functional contact form." },
+      {
+        "title": "Goal 3",
+        "text": "Use accurate information for the website based on the niche."
+      },
+      { "title": "Goal 4", "text": "Add great SEO and index high on Google." }
     ],
     "_siteDemoLink": "/pressure-washing"
   },
@@ -272,10 +290,16 @@
       }
     ],
     "_siteGoals": [
-      { "title": "Goal 1", "text": "" },
-      { "title": "Goal 2", "text": "" },
-      { "title": "Goal 3", "text": "" },
-      { "title": "Goal 4", "text": "" }
+      {
+        "title": "Goal 1",
+        "text": "Create responsive and high quality pages."
+      },
+      { "title": "Goal 2", "text": "Create a functional contact form." },
+      {
+        "title": "Goal 3",
+        "text": "Use accurate information for the website based on the niche."
+      },
+      { "title": "Goal 4", "text": "Add great SEO and index high on Google." }
     ],
     "_siteDemoLink": "/lawn-care"
   },
@@ -342,10 +366,16 @@
       }
     ],
     "_siteGoals": [
-      { "title": "Goal 1", "text": "" },
-      { "title": "Goal 2", "text": "" },
-      { "title": "Goal 3", "text": "" },
-      { "title": "Goal 4", "text": "" }
+      {
+        "title": "Goal 1",
+        "text": "Create responsive and high quality pages."
+      },
+      { "title": "Goal 2", "text": "Create a functional contact form." },
+      {
+        "title": "Goal 3",
+        "text": "Use accurate information for the website based on the niche."
+      },
+      { "title": "Goal 4", "text": "Add great SEO and index high on Google." }
     ],
     "_siteDemoLink": "/art-gallery"
   },
@@ -412,10 +442,16 @@
       }
     ],
     "_siteGoals": [
-      { "title": "Goal 1", "text": "" },
-      { "title": "Goal 2", "text": "" },
-      { "title": "Goal 3", "text": "" },
-      { "title": "Goal 4", "text": "" }
+      {
+        "title": "Goal 1",
+        "text": "Create responsive and high quality pages."
+      },
+      { "title": "Goal 2", "text": "Create a functional contact form." },
+      {
+        "title": "Goal 3",
+        "text": "Use accurate information for the website based on the niche."
+      },
+      { "title": "Goal 4", "text": "Add great SEO and index high on Google." }
     ],
     "_siteDemoLink": "/photography"
   }
