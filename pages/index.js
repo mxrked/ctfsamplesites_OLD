@@ -624,15 +624,44 @@ export default function Home({ data }) {
                             key={project._siteID}
                             className={`${styles.process_set}`}
                           >
-                            <li className="main-selected orientation-change-element half-second">
-                              <img
-                                data-src={tool.src}
-                                alt={tool.title}
-                                className="lazyload main-selected orientation-change-element half-second"
-                              />
-                              <span className="main-selected orientation-change-element half-second">
-                                {tool.title}
-                              </span>
+                            <li
+                              className="main-selected orientation-change-element half-second"
+                              onClick={() => {
+                                const TOOL_TITLES = [
+                                  "Adobe XD",
+                                  "ReactJS",
+                                  "Next.js",
+                                  "Bootstrap",
+                                  "Sass",
+                                  "MongoDB",
+                                ];
+
+                                const TOOL_LINKS = [
+                                  "https://en.wikipedia.org/wiki/Adobe_XD",
+                                  "https://en.wikipedia.org/wiki/React_(software)",
+                                  "https://en.wikipedia.org/wiki/Next.js",
+                                  "https://en.wikipedia.org/wiki/Bootstrap_(front-end_framework)",
+                                  "https://en.wikipedia.org/wiki/Sass_(style_sheet_language)",
+                                  "https://en.wikipedia.org/wiki/MongoDB",
+                                ];
+
+                                const INDEX = TOOL_TITLES.indexOf(tool.title);
+
+                                if (INDEX !== -1) {
+                                  window.open(TOOL_LINKS[INDEX], "_self");
+                                }
+                              }}
+                            >
+                              <div className={`${styles.tool_cnt}`}>
+                                <img
+                                  data-src={tool.src}
+                                  alt={tool.title}
+                                  className="lazyload main-selected orientation-change-element half-second"
+                                />
+                                <span className="main-selected orientation-change-element half-second">
+                                  {tool.title}
+                                </span>
+                              </div>
                             </li>
                           </ul>
                         ))}
