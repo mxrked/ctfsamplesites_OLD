@@ -59,14 +59,15 @@
     max-width: 1900px;
     opacity: 0;
     visibility: hidden;
+    white-space: pre-wrap;
 
     .project_modal_inner {
       max-width: 1700px;
       height: 100%;
       width: 100%;
       @include quickCenter("relative");
-      padding-left: 50px;
-      padding-right: 50px;
+      padding-left: 30px;
+      padding-right: 30px;
 
       .project_modal_inner_top {
         width: 100%;
@@ -109,7 +110,7 @@
         .project_modal_inner_project_background_box {
           .project_modal_inner_project_background_row {
             .project_modal_inner_project_background_side {
-              height: 600px;
+              height: 100%;
               display: flex;
               align-items: center;
 
@@ -119,9 +120,14 @@
             }
 
             .project_modal_background_L {
+              height: 700px;
+
               .project_modal_inner_project_background_side_cnt {
+                max-width: 800px;
+                @include quickCenter("relative");
+
                 .project_main_img_holder {
-                  height: 430px;
+                  height: 510px;
                   width: 100%;
                   max-width: 100%;
                   @include quickCenter("relative");
@@ -139,6 +145,8 @@
                   height: 100%;
                   max-height: 80px;
                   width: 100%;
+                  max-width: 800px;
+                  @include quickCenter("relative");
                   padding-top: 10px;
 
                   .project_imgs_holder_box {
@@ -177,8 +185,9 @@
 
             .project_modal_background_R {
               .project_modal_inner_project_background_side_cnt {
-                max-width: 90%;
+                max-width: 970px;
                 @include quickCenter("relative");
+                text-align: center;
 
                 .project_heading {
                   font-family: "FG Semibold";
@@ -189,7 +198,31 @@
                   font-family: "Consola Regular";
                   font-size: $Link;
                   line-height: 30px;
-                  margin-bottom: 40px;
+                  margin-bottom: 30px;
+                }
+
+                .prices {
+                  margin-top: 60px;
+                  margin-bottom: 45px;
+                  max-width: 500px;
+                  @include quickCenter("relative");
+
+                  ul {
+                    font-family: "Consola Regular";
+                    margin-bottom: 25px;
+
+                    li {
+                      font-size: clamp(15px, 17px, 17px);
+
+                      span {
+                        font-size: clamp(20px, 22px, 22px);
+                        font-weight: bold;
+                        margin-top: 15px;
+                        margin-bottom: 10px;
+                        display: block;
+                      }
+                    }
+                  }
                 }
 
                 a {
@@ -201,6 +234,138 @@
 
                   &:hover {
                     color: rgb(42, 229, 246);
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .project_modal_inner_project_bottom {
+        margin-top: 120px;
+
+        .project_modal_inner_project_bottom_box {
+          .project_modal_inner_project_bottom_row {
+            .process_side {
+              // width: 100%;
+              height: 100%;
+              // padding-top: 40px;
+              // padding-bottom: 80px;
+              display: flex;
+              justify-content: flex-start;
+              align-items: flex-start;
+              margin-bottom: 110px;
+
+              .project_modal_inner_project_bottom_side_cnt {
+                max-width: 970px;
+                @include quickCenter("relative");
+                text-align: center;
+
+                .side_heading {
+                  font-family: "FG Semibold";
+                  font-size: $SubHeading;
+                  margin-bottom: 30px;
+                  display: block;
+                }
+
+                .process_set {
+                  li {
+                    font-family: "Consola Regular";
+                    font-size: $Link;
+                    display: block;
+
+                    &:last-child {
+                      margin-bottom: 35px;
+                    }
+
+                    span {
+                      font-family: "Consola Bold";
+                      font-size: clamp(25px, 29px, 29px);
+                      display: block;
+                      margin-bottom: 5px;
+                    }
+                  }
+                }
+              }
+            }
+
+            .goals_side {
+              height: 100%;
+              display: flex;
+              justify-content: flex-end;
+              align-items: flex-start;
+              margin-bottom: 110px;
+
+              .project_modal_inner_project_bottom_side_cnt {
+                max-width: 970px;
+                @include quickCenter("relative");
+                text-align: center;
+
+                .side_heading {
+                  font-family: "FG Semibold";
+                  font-size: $SubHeading;
+                  margin-bottom: 30px;
+                  display: block;
+                }
+
+                .goal_set {
+                  li {
+                    font-family: "Consola Regular";
+                    font-size: $Link;
+                    display: block;
+
+                    &:last-child {
+                      margin-bottom: 35px;
+                    }
+
+                    span {
+                      font-family: "Consola Bold";
+                      font-size: clamp(25px, 29px, 29px);
+                      display: block;
+                      margin-bottom: 5px;
+                    }
+                  }
+                }
+              }
+            }
+
+            .tools_side {
+              width: 100%;
+              height: 100%;
+              padding-top: 40px;
+              padding-bottom: 80px;
+              margin-bottom: 110px;
+
+              .project_modal_inner_project_bottom_side_cnt {
+                max-width: 970px;
+                @include quickCenter("relative");
+                text-align: center;
+
+                .side_heading {
+                  font-family: "FG Semibold";
+                  font-size: $SubHeading;
+                  margin-bottom: 30px;
+                  display: block;
+                }
+
+                .tools_holder {
+                  @include displayElement(flex, space-evenly, center);
+
+                  ul {
+                    width: 100%;
+
+                    li {
+                      display: grid;
+                      text-align: center;
+
+                      img {
+                        max-width: 80px;
+                        max-height: 80px;
+                        display: block;
+                        @include quickCenter("relative");
+                      }
+                    }
                   }
                 }
               }
