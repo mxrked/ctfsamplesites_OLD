@@ -10,7 +10,10 @@ import { useInView } from "react-intersection-observer";
 import TriggerInViewMotion from "@/assets/functions/dom/triggers/TriggerInViewMotion";
 import DeclareStorageVariable from "@/assets/functions/data/storage/DeclareStorageVariable";
 import RemoveStorageVariable from "@/assets/functions/data/storage/RemoveStorageVariable";
-import { TriggerExitAnimations } from "@/assets/functions/dom/triggers/TriggerExitAnimations";
+import {
+  TriggerExitAnimations,
+  TriggerExitAnimations_NON_LINKS,
+} from "@/assets/functions/dom/triggers/TriggerExitAnimations";
 
 import { FADE_IN } from "@/assets/animations/FADES";
 
@@ -533,12 +536,20 @@ export default function Home({ data }) {
                         </ul>
                       </div>
 
-                      <a
+                      <span
+                        onClick={() => {
+                          // TriggerExitAnimations();
+                          TriggerExitAnimations_NON_LINKS();
+
+                          setTimeout(() => {
+                            router.push(project._siteDemoLink);
+                          }, 1200);
+                        }}
                         href={project._siteDemoLink}
-                        className="main-selected orientation-change-element half-second"
+                        className={`${styles.project_link} main-selected orientation-change-element half-second`}
                       >
                         View Site
-                      </a>
+                      </span>
                     </div>
                   </div>
                 </div>
@@ -881,12 +892,20 @@ export default function Home({ data }) {
                           <div
                             className={`${styles.project_inner_cnt_bottom_cnt}`}
                           >
-                            <a
+                            <span
+                              onClick={() => {
+                                // TriggerExitAnimations();
+                                TriggerExitAnimations_NON_LINKS();
+
+                                setTimeout(() => {
+                                  router.push(project._siteDemoLink);
+                                }, 1200);
+                              }}
                               href={project._siteDemoLink}
-                              className="main-selected orientation-change-element half-second"
+                              className={`${styles.project_link} main-selected orientation-change-element half-second`}
                             >
                               View Site
-                            </a>
+                            </span>
 
                             <button
                               onClick={() => {
