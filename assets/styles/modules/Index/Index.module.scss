@@ -333,9 +333,9 @@
             .tools_side {
               width: 100%;
               height: 100%;
-              padding-top: 40px;
+              padding-top: 10px;
               padding-bottom: 80px;
-              margin-bottom: 110px;
+              margin-bottom: 70px;
 
               .project_modal_inner_project_bottom_side_cnt {
                 max-width: 970px;
@@ -345,25 +345,47 @@
                 .side_heading {
                   font-family: "FG Semibold";
                   font-size: $SubHeading;
-                  margin-bottom: 30px;
+                  margin-bottom: 50px;
                   display: block;
                 }
 
                 .tools_holder {
-                  @include displayElement(flex, space-evenly, center);
+                  display: grid;
+                  grid-template-columns: repeat(3, auto);
+                  max-width: 545px;
+                  @include quickCenter("relative");
 
                   ul {
                     width: 100%;
+                    margin-bottom: 30px;
 
                     li {
                       display: grid;
                       text-align: center;
+                      border: 2px solid rgba(235, 235, 235, 0.749);
+                      padding: 10px;
+                      height: 160px;
+                      @include displayElement(flex, center, center);
+                      max-width: 75%;
+                      @include quickCenter("relative");
+                      position: relative;
+                      border-radius: 10px;
+                      cursor: pointer;
 
-                      img {
-                        max-width: 80px;
-                        max-height: 80px;
-                        display: block;
-                        @include quickCenter("relative");
+                      .tool_cnt {
+                        img {
+                          max-width: 65px;
+                          max-height: 65px;
+                          display: block;
+                          @include quickCenter("relative");
+                          margin-bottom: 20px;
+                        }
+
+                        span {
+                          font-family: "Consola Bold";
+                          font-size: $Link;
+                          display: block;
+                        }
                       }
                     }
                   }
