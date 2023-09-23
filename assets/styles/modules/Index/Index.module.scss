@@ -225,12 +225,13 @@
                   }
                 }
 
-                a {
+                .project_link {
                   display: inline-block;
                   color: $BlueChill;
                   font-size: $Text;
                   font-family: "Consola Bold";
                   margin-bottom: 20px;
+                  cursor: pointer;
 
                   &:hover {
                     color: rgb(42, 229, 246);
@@ -613,12 +614,13 @@
                     text-align: center;
                     padding-bottom: 25px;
 
-                    a {
+                    .project_link {
                       display: inline-block;
                       color: $BlueChill;
                       font-size: $Text;
                       font-family: "Consola Bold";
                       margin-bottom: 20px;
+                      cursor: pointer;
 
                       &:hover {
                         color: rgb(42, 229, 246);

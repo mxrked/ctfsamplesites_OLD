@@ -202,14 +202,15 @@
   margin-bottom: 10px;
   display: block;
 }
-.index_page .project_modal .project_modal_inner .project_modal_inner_project_background .project_modal_inner_project_background_box .project_modal_inner_project_background_row .project_modal_background_R .project_modal_inner_project_background_side_cnt a {
+.index_page .project_modal .project_modal_inner .project_modal_inner_project_background .project_modal_inner_project_background_box .project_modal_inner_project_background_row .project_modal_background_R .project_modal_inner_project_background_side_cnt .project_link {
   display: inline-block;
   color: #1092a7;
   font-size: clamp(1.25rem, 0.61vw + 1.1rem, 1.58rem);
   font-family: "Consola Bold";
   margin-bottom: 20px;
+  cursor: pointer;
 }
-.index_page .project_modal .project_modal_inner .project_modal_inner_project_background .project_modal_inner_project_background_box .project_modal_inner_project_background_row .project_modal_background_R .project_modal_inner_project_background_side_cnt a:hover {
+.index_page .project_modal .project_modal_inner .project_modal_inner_project_background .project_modal_inner_project_background_box .project_modal_inner_project_background_row .project_modal_background_R .project_modal_inner_project_background_side_cnt .project_link:hover {
   color: rgb(42, 229, 246);
 }
 .index_page .project_modal .project_modal_inner .project_modal_inner_project_bottom {
@@ -536,14 +537,15 @@
   text-align: center;
   padding-bottom: 25px;
 }
-.index_page .index_page_inner .index_page_inner_projects .index_page_inner_projects_inner .index_page_inner_projects_inner_box .index_page_inner_projects_inner_row .project .project_inner .project_inner_cnt_bottom .project_inner_cnt_bottom_cnt a {
+.index_page .index_page_inner .index_page_inner_projects .index_page_inner_projects_inner .index_page_inner_projects_inner_box .index_page_inner_projects_inner_row .project .project_inner .project_inner_cnt_bottom .project_inner_cnt_bottom_cnt .project_link {
   display: inline-block;
   color: #1092a7;
   font-size: clamp(1.25rem, 0.61vw + 1.1rem, 1.58rem);
   font-family: "Consola Bold";
   margin-bottom: 20px;
+  cursor: pointer;
 }
-.index_page .index_page_inner .index_page_inner_projects .index_page_inner_projects_inner .index_page_inner_projects_inner_box .index_page_inner_projects_inner_row .project .project_inner .project_inner_cnt_bottom .project_inner_cnt_bottom_cnt a:hover {
+.index_page .index_page_inner .index_page_inner_projects .index_page_inner_projects_inner .index_page_inner_projects_inner_box .index_page_inner_projects_inner_row .project .project_inner .project_inner_cnt_bottom .project_inner_cnt_bottom_cnt .project_link:hover {
   color: rgb(42, 229, 246);
 }
 .index_page .index_page_inner .index_page_inner_projects .index_page_inner_projects_inner .index_page_inner_projects_inner_box .index_page_inner_projects_inner_row .project .project_inner .project_inner_cnt_bottom .project_inner_cnt_bottom_cnt button {
