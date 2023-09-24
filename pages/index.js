@@ -14,6 +14,7 @@ import {
   TriggerExitAnimations,
   TriggerExitAnimations_NON_LINKS,
 } from "@/assets/functions/dom/triggers/TriggerExitAnimations";
+import ToggleProjectImgModal from "@/assets/functions/dom/togglers/ToggleProjectImgModal";
 
 import { FADE_IN } from "@/assets/animations/FADES";
 
@@ -423,7 +424,7 @@ export default function Home({ data }) {
                   className={`${styles.project_modal_inner_project_background_row} row`}
                 >
                   <div
-                    className={`${styles.project_modal_inner_project_background_side} ${styles.project_modal_background_L} col-lg-12 col-md-12 col-sm-12 col-xs-12`}
+                    className={`${styles.project_modal_inner_project_background_side} ${styles.project_modal_background_L} project-modal-background-L col-lg-12 col-md-12 col-sm-12 col-xs-12`}
                   >
                     <div
                       className={`${styles.project_modal_inner_project_background_side_cnt}`}
@@ -633,7 +634,7 @@ export default function Home({ data }) {
                         {project._siteTools.map((tool) => (
                           <ul
                             key={project._siteID}
-                            className={`${styles.process_set}`}
+                            className={`${styles.tool_set}`}
                           >
                             <li
                               className="main-selected orientation-change-element half-second"
@@ -685,6 +686,47 @@ export default function Home({ data }) {
           </div>
         </div>
       ))}
+
+      <div
+        id="projectImgModalDarken"
+        className={`${styles.project_modal_darken} full-second`}
+        onClick={() => {
+          document.getElementById("projectImgModalDarken").style.pointerEvents =
+            "none";
+
+          document.getElementById("projectImgModal").style.overflowY = "hidden";
+          document.getElementById("projectImgModal").style.pointerEvents =
+            "none";
+
+          document.getElementById("projectImgModalDarken").style.opacity = 0;
+          document.getElementById("projectImgModalDarken").style.visibility =
+            "hidden";
+          document.getElementById("projectImgModal").style.opacity = 0;
+          document.getElementById("projectImgModal").style.visibility =
+            "hidden";
+
+          setTimeout(() => {
+            RemoveStorageVariable("session", "Modal Opened");
+
+            document.body.style.pointerEvents = "auto";
+            document.body.style.overflowY = "auto";
+          }, 1100);
+        }}
+      />
+
+      <div
+        id="projectImgModal"
+        className={`${styles.project_img_modal} project-img-modal full-second`}
+      >
+        <div className={`${styles.project_img_modal_inner}`}>
+          <img
+            id="projectImgModalImg"
+            data-src="https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/ctfsamplesites_CDN/main/imgs/no-image.webp"
+            className={`lazyload`}
+            alt="Project Img Modal Img"
+          />
+        </div>
+      </div>
 
       <main id="PAGE_CNT">
         <motion.div
@@ -821,16 +863,26 @@ export default function Home({ data }) {
                                 project._siteImgs[0]
                               ) ? (
                                 <div
+                                  onClick={(e) => {
+                                    ToggleProjectImgModal(e);
+                                  }}
                                   id={`projectMainImg${project._siteID}`}
-                                  className={`${styles.project_main_img}`}
+                                  className={`${styles.project_main_img} half-second`}
+                                  aria-label={project._siteImgs[0]}
                                   style={{
                                     backgroundImage: `url(${project._siteImgs[0]})`,
                                   }}
                                 />
                               ) : (
                                 <div
+                                  onClick={(e) => {
+                                    ToggleProjectImgModal(e);
+                                  }}
                                   id={`projectMainImg${project._siteID}`}
-                                  className={`${styles.project_main_img}`}
+                                  className={`${styles.project_main_img} half-second`}
+                                  aria-label={
+                                    "https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/ctfsamplesites_CDN/main/imgs/no-image.webp"
+                                  }
                                   style={{
                                     backgroundImage: `url(https://raw.githubusercontent.com/mxrked/freelance_projects_CDN/main/ctfsamplesites_CDN/main/imgs/no-image.webp)`,
                                   }}
