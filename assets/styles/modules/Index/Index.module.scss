@@ -866,14 +866,19 @@
         padding-right: 50px;
 
         .project_modal_inner_top {
-          height: 140px;
+          height: 110px;
 
           .site_id {
-            font-size: clamp(23px, 24px, 24px);
+            font-size: clamp(20px, 21px, 21px);
 
             span {
-              font-size: clamp(20px, 21px, 21px);
+              font-size: clamp(18px, 19px, 19px);
             }
+          }
+
+          .closer {
+            height: 35px;
+            max-width: 70px;
           }
         }
 
@@ -881,21 +886,23 @@
           .project_modal_inner_project_background_box {
             .project_modal_inner_project_background_row {
               .project_modal_background_L {
-                height: 500px;
+                height: 400px;
                 align-items: flex-start;
 
                 .project_modal_inner_project_background_side_cnt {
+                  max-width: 450px;
+
                   .project_main_img_holder {
-                    height: 340px;
+                    height: 250px;
                   }
 
                   .project_imgs_holder {
-                    max-height: 100px;
+                    max-height: 80px;
 
                     .project_imgs_holder_box {
                       .project_imgs_holder_row {
                         .img {
-                          height: 100px;
+                          height: 80px;
                         }
                       }
                     }
@@ -908,11 +915,12 @@
                   max-width: 650px;
 
                   .project_heading {
-                    font-size: clamp(30px, 40px, 40px);
+                    font-size: clamp(29px, 31px, 31px);
+                    margin-bottom: 20px;
                   }
 
                   p {
-                    font-size: clamp(17px, 18px, 18px);
+                    font-size: clamp(16px, 17px, 17px);
                   }
                 }
               }
@@ -921,21 +929,23 @@
         }
 
         .project_modal_inner_project_bottom {
-          margin-top: 120px;
+          margin-top: 60px;
 
           .project_modal_inner_project_bottom_box {
             .project_modal_inner_project_bottom_row {
               .process_side {
+                margin-bottom: 45px;
+
                 .project_modal_inner_project_bottom_side_cnt {
                   max-width: 600px;
 
                   .side_heading {
-                    font-size: clamp(30px, 40px, 40px);
+                    font-size: clamp(29px, 31px, 31px);
                   }
 
                   .process_set {
                     li {
-                      font-size: clamp(17px, 18px, 18px);
+                      font-size: clamp(16px, 17px, 17px);
 
                       span {
                         font-size: clamp(19px, 20px, 20px);
@@ -946,16 +956,18 @@
               }
 
               .goals_side {
+                margin-bottom: 45px;
+
                 .project_modal_inner_project_bottom_side_cnt {
                   max-width: 600px;
 
                   .side_heading {
-                    font-size: clamp(30px, 40px, 40px);
+                    font-size: clamp(29px, 31px, 31px);
                   }
 
                   .goal_set {
                     li {
-                      font-size: clamp(17px, 18px, 18px);
+                      font-size: clamp(16px, 17px, 17px);
 
                       span {
                         font-size: clamp(19px, 20px, 20px);
@@ -967,28 +979,29 @@
 
               .tools_side {
                 margin-bottom: 0px;
+                padding-bottom: 55px;
 
                 .project_modal_inner_project_bottom_side_cnt {
-                  max-width: 400px;
+                  max-width: 460px;
 
                   .side_heading {
-                    font-size: clamp(30px, 40px, 40px);
+                    font-size: clamp(29px, 31px, 31px);
                   }
 
                   .tools_holder {
-                    grid-template-columns: repeat(2, auto);
+                    grid-template-columns: repeat(3, auto);
 
                     .tool_set {
                       margin-bottom: 15px;
 
                       li {
-                        max-width: 85%;
+                        max-width: 90%;
                         height: 135px;
 
                         .tool_cnt {
                           img {
-                            max-width: 50px;
-                            max-height: 50px;
+                            max-width: 40px;
+                            max-height: 40px;
                           }
                         }
                       }
@@ -1763,7 +1776,7 @@
                 align-items: flex-start;
 
                 .project_modal_inner_project_background_side_cnt {
-                  max-width: 450px;
+                  max-width: 340px;
 
                   .project_main_img_holder {
                     height: 210px;

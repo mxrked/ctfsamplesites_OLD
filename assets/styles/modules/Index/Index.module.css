@@ -716,85 +716,100 @@
     padding-right: 50px;
   }
   .index_page .project_modal .project_modal_inner .project_modal_inner_top {
-    height: 140px;
+    height: 110px;
   }
   .index_page .project_modal .project_modal_inner .project_modal_inner_top .site_id {
-    font-size: 24px;
-  }
-  .index_page .project_modal .project_modal_inner .project_modal_inner_top .site_id span {
     font-size: 21px;
   }
+  .index_page .project_modal .project_modal_inner .project_modal_inner_top .site_id span {
+    font-size: 19px;
+  }
+  .index_page .project_modal .project_modal_inner .project_modal_inner_top .closer {
+    height: 35px;
+    max-width: 70px;
+  }
   .index_page .project_modal .project_modal_inner .project_modal_inner_project_background .project_modal_inner_project_background_box .project_modal_inner_project_background_row .project_modal_background_L {
-    height: 500px;
+    height: 400px;
     align-items: flex-start;
   }
+  .index_page .project_modal .project_modal_inner .project_modal_inner_project_background .project_modal_inner_project_background_box .project_modal_inner_project_background_row .project_modal_background_L .project_modal_inner_project_background_side_cnt {
+    max-width: 450px;
+  }
   .index_page .project_modal .project_modal_inner .project_modal_inner_project_background .project_modal_inner_project_background_box .project_modal_inner_project_background_row .project_modal_background_L .project_modal_inner_project_background_side_cnt .project_main_img_holder {
-    height: 340px;
+    height: 250px;
   }
   .index_page .project_modal .project_modal_inner .project_modal_inner_project_background .project_modal_inner_project_background_box .project_modal_inner_project_background_row .project_modal_background_L .project_modal_inner_project_background_side_cnt .project_imgs_holder {
-    max-height: 100px;
+    max-height: 80px;
   }
   .index_page .project_modal .project_modal_inner .project_modal_inner_project_background .project_modal_inner_project_background_box .project_modal_inner_project_background_row .project_modal_background_L .project_modal_inner_project_background_side_cnt .project_imgs_holder .project_imgs_holder_box .project_imgs_holder_row .img {
-    height: 100px;
+    height: 80px;
   }
   .index_page .project_modal .project_modal_inner .project_modal_inner_project_background .project_modal_inner_project_background_box .project_modal_inner_project_background_row .project_modal_background_R .project_modal_inner_project_background_side_cnt {
     max-width: 650px;
   }
   .index_page .project_modal .project_modal_inner .project_modal_inner_project_background .project_modal_inner_project_background_box .project_modal_inner_project_background_row .project_modal_background_R .project_modal_inner_project_background_side_cnt .project_heading {
-    font-size: 40px;
+    font-size: 31px;
+    margin-bottom: 20px;
   }
   .index_page .project_modal .project_modal_inner .project_modal_inner_project_background .project_modal_inner_project_background_box .project_modal_inner_project_background_row .project_modal_background_R .project_modal_inner_project_background_side_cnt p {
-    font-size: 18px;
+    font-size: 17px;
   }
   .index_page .project_modal .project_modal_inner .project_modal_inner_project_bottom {
-    margin-top: 120px;
+    margin-top: 60px;
+  }
+  .index_page .project_modal .project_modal_inner .project_modal_inner_project_bottom .project_modal_inner_project_bottom_box .project_modal_inner_project_bottom_row .process_side {
+    margin-bottom: 45px;
   }
   .index_page .project_modal .project_modal_inner .project_modal_inner_project_bottom .project_modal_inner_project_bottom_box .project_modal_inner_project_bottom_row .process_side .project_modal_inner_project_bottom_side_cnt {
     max-width: 600px;
   }
   .index_page .project_modal .project_modal_inner .project_modal_inner_project_bottom .project_modal_inner_project_bottom_box .project_modal_inner_project_bottom_row .process_side .project_modal_inner_project_bottom_side_cnt .side_heading {
-    font-size: 40px;
+    font-size: 31px;
   }
   .index_page .project_modal .project_modal_inner .project_modal_inner_project_bottom .project_modal_inner_project_bottom_box .project_modal_inner_project_bottom_row .process_side .project_modal_inner_project_bottom_side_cnt .process_set li {
-    font-size: 18px;
+    font-size: 17px;
   }
   .index_page .project_modal .project_modal_inner .project_modal_inner_project_bottom .project_modal_inner_project_bottom_box .project_modal_inner_project_bottom_row .process_side .project_modal_inner_project_bottom_side_cnt .process_set li span {
     font-size: 20px;
+  }
+  .index_page .project_modal .project_modal_inner .project_modal_inner_project_bottom .project_modal_inner_project_bottom_box .project_modal_inner_project_bottom_row .goals_side {
+    margin-bottom: 45px;
   }
   .index_page .project_modal .project_modal_inner .project_modal_inner_project_bottom .project_modal_inner_project_bottom_box .project_modal_inner_project_bottom_row .goals_side .project_modal_inner_project_bottom_side_cnt {
     max-width: 600px;
   }
   .index_page .project_modal .project_modal_inner .project_modal_inner_project_bottom .project_modal_inner_project_bottom_box .project_modal_inner_project_bottom_row .goals_side .project_modal_inner_project_bottom_side_cnt .side_heading {
-    font-size: 40px;
+    font-size: 31px;
   }
   .index_page .project_modal .project_modal_inner .project_modal_inner_project_bottom .project_modal_inner_project_bottom_box .project_modal_inner_project_bottom_row .goals_side .project_modal_inner_project_bottom_side_cnt .goal_set li {
-    font-size: 18px;
+    font-size: 17px;
   }
   .index_page .project_modal .project_modal_inner .project_modal_inner_project_bottom .project_modal_inner_project_bottom_box .project_modal_inner_project_bottom_row .goals_side .project_modal_inner_project_bottom_side_cnt .goal_set li span {
     font-size: 20px;
   }
   .index_page .project_modal .project_modal_inner .project_modal_inner_project_bottom .project_modal_inner_project_bottom_box .project_modal_inner_project_bottom_row .tools_side {
     margin-bottom: 0px;
+    padding-bottom: 55px;
   }
   .index_page .project_modal .project_modal_inner .project_modal_inner_project_bottom .project_modal_inner_project_bottom_box .project_modal_inner_project_bottom_row .tools_side .project_modal_inner_project_bottom_side_cnt {
-    max-width: 400px;
+    max-width: 460px;
   }
   .index_page .project_modal .project_modal_inner .project_modal_inner_project_bottom .project_modal_inner_project_bottom_box .project_modal_inner_project_bottom_row .tools_side .project_modal_inner_project_bottom_side_cnt .side_heading {
-    font-size: 40px;
+    font-size: 31px;
   }
   .index_page .project_modal .project_modal_inner .project_modal_inner_project_bottom .project_modal_inner_project_bottom_box .project_modal_inner_project_bottom_row .tools_side .project_modal_inner_project_bottom_side_cnt .tools_holder {
-    grid-template-columns: repeat(2, auto);
+    grid-template-columns: repeat(3, auto);
   }
   .index_page .project_modal .project_modal_inner .project_modal_inner_project_bottom .project_modal_inner_project_bottom_box .project_modal_inner_project_bottom_row .tools_side .project_modal_inner_project_bottom_side_cnt .tools_holder .tool_set {
     margin-bottom: 15px;
   }
   .index_page .project_modal .project_modal_inner .project_modal_inner_project_bottom .project_modal_inner_project_bottom_box .project_modal_inner_project_bottom_row .tools_side .project_modal_inner_project_bottom_side_cnt .tools_holder .tool_set li {
-    max-width: 85%;
+    max-width: 90%;
     height: 135px;
   }
   .index_page .project_modal .project_modal_inner .project_modal_inner_project_bottom .project_modal_inner_project_bottom_box .project_modal_inner_project_bottom_row .tools_side .project_modal_inner_project_bottom_side_cnt .tools_holder .tool_set li .tool_cnt img {
-    max-width: 50px;
-    max-height: 50px;
+    max-width: 40px;
+    max-height: 40px;
   }
   .index_page .index_page_inner {
     padding-left: 40px;
@@ -1307,7 +1322,7 @@
     align-items: flex-start;
   }
   .index_page .project_modal .project_modal_inner .project_modal_inner_project_background .project_modal_inner_project_background_box .project_modal_inner_project_background_row .project_modal_background_L .project_modal_inner_project_background_side_cnt {
-    max-width: 450px;
+    max-width: 340px;
   }
   .index_page .project_modal .project_modal_inner .project_modal_inner_project_background .project_modal_inner_project_background_box .project_modal_inner_project_background_row .project_modal_background_L .project_modal_inner_project_background_side_cnt .project_main_img_holder {
     height: 210px;
